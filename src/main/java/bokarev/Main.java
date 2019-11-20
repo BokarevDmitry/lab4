@@ -18,11 +18,11 @@ public class Main {
         ActorSystem system = ActorSystem.create("test");
         ActorRef StorageActorRef = system.actorOf (StorageActor.props(), "Storage-Actor");
 
-        StorageActorRef.tell(new StorageActor.TestResultClass(1), ActorRef.noSender());
-        StorageActorRef.tell(new StorageActor.TestResultClass(7), ActorRef.noSender());
-        StorageActorRef.tell(new StorageActor.TestResultClass(2), ActorRef.noSender());
+        //StorageActorRef.tell(new StorageActor.TestResultClass(1), ActorRef.noSender());
+        //StorageActorRef.tell(new StorageActor.TestResultClass(7), ActorRef.noSender());
+        //StorageActorRef.tell(new StorageActor.TestResultClass(2), ActorRef.noSender());
 
-        StorageActorRef.tell(new StorageActor.getTestsClass(11), ActorRef.noSender());
+        //StorageActorRef.tell(new StorageActor.getTestsClass(11), ActorRef.noSender());
 
 
         ArrayList<Integer> arr = new ArrayList<>();
