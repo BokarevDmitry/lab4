@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) throws InterruptedException{
 
         ActorSystem system = ActorSystem.create("Actor-System");
-        //ActorRef storageActorRef = system.actorOf (StorageActor.props(), "Storage-Actor");
+        ActorRef storageActorRef = system.actorOf (StorageActor.props(), "Storage-Actor");
 
 
         //storageActorRef.tell(new RouterActor.TestResult(1), ActorRef.noSender());
