@@ -29,7 +29,7 @@ public class MainHttp extends AllDirectives {
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         MainHttp instance = new MainHttp();
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
-                instance.createRoute().flow(system, materializer);
+                instance.createRoute(system).flow(system, materializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
                 routeFlow,
                 ConnectHttp.toHost("localhost", 8080),
@@ -70,7 +70,7 @@ public class MainHttp extends AllDirectives {
         storageActorRef.tell(new StorageActor.getTestsClass(11), ActorRef.noSender());
         */
     }
-    private Route createRoute() {
+    private Route createRoute(ActorSystem system) {
         return concat(
                 path("hello", () ->
                         get(() ->
