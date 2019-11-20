@@ -68,7 +68,7 @@ public class TestPasserActor extends AbstractActor {
                 .build();
     }
 
-    private String invoke(Test r, Object... args) throws ScriptException, NoSuchMethodException {
+    private String invoke(Test r) throws ScriptException, NoSuchMethodException {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
         engine.eval(r.jsScript);
         Invocable invocable = (Invocable) engine;
