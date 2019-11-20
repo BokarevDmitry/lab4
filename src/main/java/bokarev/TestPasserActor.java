@@ -67,12 +67,11 @@ public class TestPasserActor extends AbstractActor {
                 .build();
     }
 
-    public static String invoke(Test r, Object... args) throws ScriptException {
+    public static String invoke(Test r, Object... args) throws ScriptException, NoSuchMethodException {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
         engine.eval(r.jsScript);
         Invocable invocable = (Invocable) engine;
-
-        return invocable.invokeFunction()
+        return invocable.invokeFunction(r.functionName, r.args).toString();
     }
 }
 
