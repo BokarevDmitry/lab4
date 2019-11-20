@@ -5,10 +5,7 @@ import akka.actor.Props;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
 
-import javax.script.Invocable;
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
+import javax.script.*;
 import java.util.ArrayList;
 
 
@@ -73,8 +70,10 @@ public class TestPasserActor extends AbstractActor {
     public static String invoke(Test r) throws ScriptException {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
         engine.eval(r.jsScript);
+        engine.setContext(new SimpleScriptContext());
+
         Invocable invocable = (Invocable) engine;
-        return invocable.invokeFunction() .toString();
+        return invocable.invokeFunction(r.functionName, r.args) .toString();
     }
 }
 

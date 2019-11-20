@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="279e44f8-1009-414d-9238-0986831e3740" name="Default" comment="" />
+    <list default="true" id="279e44f8-1009-414d-9238-0986831e3740" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/bokarev/TestPasserActor.java" afterPath="$PROJECT_DIR$/src/main/java/bokarev/TestPasserActor.java" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -97,18 +99,18 @@
       <file leaf-file-name="TestPasserActor.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/bokarev/TestPasserActor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="75" column="27" lean-forward="true" selection-start-line="75" selection-start-column="27" selection-end-line="75" selection-end-column="27" />
+            <state relative-caret-position="409">
+              <caret line="75" column="63" lean-forward="false" selection-start-line="75" selection-start-column="63" selection-end-line="75" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#530#531#0" expanded="true" />
-                <element signature="e#582#583#0" expanded="true" />
-                <element signature="e#617#618#0" expanded="true" />
-                <element signature="e#675#676#0" expanded="true" />
-                <element signature="e#1293#1294#0" expanded="true" />
-                <element signature="e#1351#1352#0" expanded="true" />
-                <element signature="e#1395#1396#0" expanded="true" />
-                <element signature="e#1453#1454#0" expanded="true" />
+                <element signature="e#410#411#0" expanded="true" />
+                <element signature="e#462#463#0" expanded="true" />
+                <element signature="e#497#498#0" expanded="true" />
+                <element signature="e#555#556#0" expanded="true" />
+                <element signature="e#1173#1174#0" expanded="true" />
+                <element signature="e#1231#1232#0" expanded="true" />
+                <element signature="e#1275#1276#0" expanded="true" />
+                <element signature="e#1333#1334#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -753,18 +755,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bokarev/TestPasserActor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="75" column="27" lean-forward="true" selection-start-line="75" selection-start-column="27" selection-end-line="75" selection-end-column="27" />
+        <state relative-caret-position="409">
+          <caret line="75" column="63" lean-forward="false" selection-start-line="75" selection-start-column="63" selection-end-line="75" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#530#531#0" expanded="true" />
-            <element signature="e#582#583#0" expanded="true" />
-            <element signature="e#617#618#0" expanded="true" />
-            <element signature="e#675#676#0" expanded="true" />
-            <element signature="e#1293#1294#0" expanded="true" />
-            <element signature="e#1351#1352#0" expanded="true" />
-            <element signature="e#1395#1396#0" expanded="true" />
-            <element signature="e#1453#1454#0" expanded="true" />
+            <element signature="e#410#411#0" expanded="true" />
+            <element signature="e#462#463#0" expanded="true" />
+            <element signature="e#497#498#0" expanded="true" />
+            <element signature="e#555#556#0" expanded="true" />
+            <element signature="e#1173#1174#0" expanded="true" />
+            <element signature="e#1231#1232#0" expanded="true" />
+            <element signature="e#1275#1276#0" expanded="true" />
+            <element signature="e#1333#1334#0" expanded="true" />
           </folding>
         </state>
       </provider>
