@@ -25,7 +25,7 @@ public class TestPasserActor extends AbstractActor {
         return Props.create(TestPasserActor.class);
     }
 
-    public static final class Test {
+    public static class Test {
         Integer packageID;
         String jsScript, functionName, testName;
         Float expectedResult;
@@ -58,6 +58,10 @@ public class TestPasserActor extends AbstractActor {
                 .match(Test.class, r -> {
                     log.info("Received test message");
                     invoke(r);
+                    ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
+                    engine.eval(r.jsScript);
+                    Invocable invocable = (Invocable) engine;
+                    invocable.invokeFunction(r.functionName, r.args);
                 })
 
                 .match(StorageActor.getTestsClass.class, r -> {
@@ -68,11 +72,11 @@ public class TestPasserActor extends AbstractActor {
                 .build();
     }
 
-    public static Object invoke(Test r) {
+    public static Object invoke(Test a) {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
-        engine.eval(r.jsScript);
+        engine.eval(a.jsScript);
         Invocable invocable = (Invocable) engine;
-        return invocable.invokeFunction(r.functionName, r.args);
+        return invocable.invokeFunction(a.functionName, a.args);
     }
 }
 
