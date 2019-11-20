@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.util.concurrent.CompletionStage;
 import java.util.concurrent.Future;
 //import scala.compat.java8.OptionConverters;
+import scala.compat.Platform.*;
 
 
 //import static bokarev.StoreActor.Msg.GREET;
