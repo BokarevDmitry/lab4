@@ -11,13 +11,14 @@ import akka.http.javadsl.model.HttpResponse;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 
+import java.io.IOException;
 import java.util.concurrent.CompletionStage;
 
 //import static bokarev.StoreActor.Msg.GREET;
 
 
 public class Main {
-    public static void main(String[] args) throws InterruptedException{
+    public static void main(String[] args) throws InterruptedException, IOException {
 
         ActorSystem system = ActorSystem.create("Actor-System");
 
@@ -32,7 +33,15 @@ public class Main {
                 materializer
         );
 
-        System.out.println("Server online at http://localhost:8080");
+        System.out.println("Server online at http://localhost:8080/\nPress RETURN to stop...");
+        System.in.read();
+        binding
+                .thenCompose(ServerBinding::unbind)
+                .thenAccept(unbound -> system.terminate());
+
+
+
+
 
 
 
