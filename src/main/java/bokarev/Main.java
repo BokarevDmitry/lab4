@@ -1,8 +1,10 @@
 package bokarev;
 
+import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
+import akka.japi.pf.ReceiveBuilder;
 
 import static bokarev.StoreActor.Msg.GREET;
 
@@ -21,4 +23,3 @@ public class Main {
         );
     }
 }
-
