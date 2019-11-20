@@ -13,10 +13,7 @@ public class TestPasserActor extends AbstractActor {
 
     private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), this);
 
-    private ArrayList<Integer> testResults;
-
     public TestPasserActor() {
-        this.testResults = new ArrayList<>();
     }
 
     public static Props props() {
@@ -27,7 +24,6 @@ public class TestPasserActor extends AbstractActor {
         Integer packageID;
         String jsScript, functionName, testName;
         Double expectedResult;
-        //ArrayList<Object> args;
         Object[] params;
 
         public Test(Integer packageID, String jsScript, String functionName, String testName, Double expectedResult, Object[] params) {
@@ -62,7 +58,6 @@ public class TestPasserActor extends AbstractActor {
 
                 .match(StorageActor.getTestsClass.class, r -> {
                     log.info("Received Get Test Request message for package " + r.packageID);
-                    log.info("Test results: " + this.testResults);
                 })
 
                 .build();
@@ -72,7 +67,6 @@ public class TestPasserActor extends AbstractActor {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
         engine.eval(r.jsScript);
         Invocable invocable = (Invocable) engine;
-        //System.out.println(r.jsScript + "\n" + r.functionName + "\n" + r.args);
         return invocable.invokeFunction(r.functionName, r.params).toString();
     }
 }
