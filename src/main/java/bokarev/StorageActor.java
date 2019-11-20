@@ -19,8 +19,8 @@ public class StorageActor extends AbstractActor {
         this.testResults = new ArrayList<Integer>();
     }
 
-    public static Props props(String text) {
-        return Props.create(StorageActor.class, text);
+    public static Props props() {
+        return Props.create(StorageActor.class);
     }
 
     public static final class TestResultClass {
