@@ -18,6 +18,7 @@ import akka.stream.javadsl.Flow;
 import java.io.IOException;
 import java.util.concurrent.CompletionStage;
 import java.util.concurrent.Future;
+import scala.compat.*;
 
 
 //import static bokarev.StoreActor.Msg.GREET;
