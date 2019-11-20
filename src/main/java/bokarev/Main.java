@@ -29,6 +29,6 @@ public class Main {
         ActorRef TestPasserActorRef = system.actorOf(TestPasserActor.props(), "TestPasser-Actor");
         TestPasserActorRef.tell(new TestPasserActor.Test(
                 11, "var divideFn = function(a,b) {return a/b}",
-                "divideFn", "test1", 2.0, params), ActorRef.noSender());
+                "divideFn", "test1", 2.0, params), StorageActorRef);
     }
 }
