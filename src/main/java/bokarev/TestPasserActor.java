@@ -8,6 +8,7 @@ import akka.event.LoggingAdapter;
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
 import java.util.ArrayList;
 
 
@@ -72,7 +73,7 @@ public class TestPasserActor extends AbstractActor {
                 .build();
     }
 
-    public static Object invoke(Test a) {
+    public static Object invoke(Test a) throws ScriptException {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
         engine.eval(a.jsScript);
         Invocable invocable = (Invocable) engine;
