@@ -70,7 +70,7 @@ public class TestPasserActor extends AbstractActor {
     public static String invoke(Test r) throws ScriptException {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
         engine.eval(r.jsScript);
-        engine.setContext(new SimpleScriptContext());
+        engine.setContext(new SimpleScriptContext().setBindings(engine.createBindings(), ScriptContext.ENGINE_SCOPE););
 
         Invocable invocable = (Invocable) engine;
         return invocable.invokeFunction(r.functionName, r.args) .toString();
