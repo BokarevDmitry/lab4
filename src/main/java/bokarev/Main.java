@@ -17,10 +17,10 @@ public class Main {
 
         ActorSystem system = ActorSystem.create("test");
 
-        ActorRef readingActor = system.actorOf(
+        /*ActorRef readingActor = system.actorOf(
                 ReadingActor.props(TEXT),
                 "reading-Actor"
-        );
+        );*/
 
 
        // readingActor.tell("hey", ActorRef.noSender());

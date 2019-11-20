@@ -39,12 +39,12 @@ public class StorageActor extends AbstractActor {
 
     @Override
     public void preStart() {
-        log.info("Starting ReadingActor {}", this);
+        log.info("Starting StorageActor {}", this);
     }
 
     @Override
     public void postStop() {
-        log.info("Stopping ReadingActor {}", this);
+        log.info("Stopping StorageActor {}", this);
     }
 
     @Override
