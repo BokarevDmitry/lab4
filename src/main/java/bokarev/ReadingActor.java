@@ -51,7 +51,7 @@ public class ReadingActor extends AbstractActor {
 
                     log.info("Received ReadLines message from " + getSender() + " count: " + r.count);
 
-                    String[] lines = text.split("\n");
+                    /*String[] lines = text.split("\n");
                     List<CompletableFuture> futures = new ArrayList<>();
 
                     for (int i = 0; i < lines.length; i++) {
@@ -71,7 +71,7 @@ public class ReadingActor extends AbstractActor {
                     ActorRef printerActorRef = getContext().actorOf(Props.create(PrinterActor.class), "Printer-Actor");
                     printerActorRef.forward(new PrinterActor.PrintFinalResult(totalNumberOfWords), getContext());
 //                    printerActorRef.tell(new PrinterActor.PrintFinalResult(totalNumberOfWords), getSelf());
-
+*/
                 })
                 .build();
     }
