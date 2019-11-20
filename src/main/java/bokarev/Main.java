@@ -22,10 +22,7 @@ public class Main {
                 "reading-Actor"
         );
 
-        ActorRef prActor = system.actorOf(
-                PrinterActor.props(TEXT),
-                "reading-Actor"
-        );
+       readingActor.tell(new PrinterActor);
 
        // readingActor.tell(new ReadingActor().Readlines(),
          //       ActorRef.noSender());
