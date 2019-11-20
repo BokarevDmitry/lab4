@@ -8,7 +8,7 @@ import akka.japi.pf.ReceiveBuilder;
 
 import java.util.concurrent.CompletableFuture;
 
-import static bokarev.StoreActor.Msg.GREET;
+/*import static bokarev.StoreActor.Msg.GREET;
 import static com.sun.org.apache.xml.internal.serialize.Method.TEXT;
 
 public class Main {
@@ -25,4 +25,4 @@ public class Main {
 
         CompletableFuture<Object> future = ast
     }
-}
+}*/
