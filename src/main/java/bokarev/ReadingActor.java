@@ -27,6 +27,11 @@ public class ReadingActor extends AbstractActor {
     }
 
     public static final class ReadLines {
+        int count;
+
+        public ReadLines(int count) {
+            this.count = count;
+        }
     }
 
     @Override
@@ -44,7 +49,7 @@ public class ReadingActor extends AbstractActor {
         return receiveBuilder()
                 .match(ReadLines.class, r -> {
 
-                    log.info("Received ReadLines message from " + getSender());
+                    log.info("Received ReadLines message from " + getSender() + " count: " + r.count);
 
                     String[] lines = text.split("\n");
                     List<CompletableFuture> futures = new ArrayList<>();

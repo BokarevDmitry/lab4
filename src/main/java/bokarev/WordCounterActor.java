@@ -28,7 +28,8 @@ public class WordCounterActor extends AbstractActor {
                     try {
                         log.info("Received CountWords message from " + getSender());
                         int numberOfWords = countWordsFromLine(r.line);
-                        getSender().tell(numberOfWords, getSelf());
+                        //getSender().tell(numberOfWords, getSelf());
+                        getSender().tell(new ReadingActor.ReadLines(numberOfWords), getSelf());
                     } catch (Exception ex) {
                         getSender().tell(new akka.actor.Status.Failure(ex), getSelf());
                         throw ex;
