@@ -1,11 +1,13 @@
 package bokarev;
 
 import akka.actor.AbstractActor;
-import akka.actor.ActorRef;
 import akka.actor.Props;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
 
+import javax.script.Invocable;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
 import java.util.ArrayList;
 
 
@@ -27,11 +29,16 @@ public class TestPasserActor extends AbstractActor {
         Integer packageID;
         String jsScript, functionName, testName;
         Float expectedResult;
-        ArrayList<Integer> params;
+        ArrayList<Integer> args;
 
 
-        public Test(int packageID, String jsScript, String functionName, String testName, Float expectedResult, ArrayList params) {
-            this.testResult = testResult;
+        public Test(Integer packageID, String jsScript, String functionName, String testName, Float expectedResult, ArrayList<Integer> args) {
+            this.packageID = packageID;
+            this.jsScript = jsScript;
+            this.functionName = functionName;
+            this.testName = testName;
+            this.expectedResult = expectedResult;
+            this.args = args;
         }
     }
 
@@ -48,17 +55,24 @@ public class TestPasserActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return receiveBuilder()
-                .match(TestResultClass.class, r -> {
-                    log.info("Received test result message");
-                    this.testResults.add(r.testResult);
+                .match(Test.class, r -> {
+                    log.info("Received test message");
+                    invoke(r);
                 })
 
-                .match(getTestsClass.class, r -> {
+                .match(StorageActor.getTestsClass.class, r -> {
                     log.info("Received Get Test Request message for package " + r.packageID);
                     log.info("Test results: " + this.testResults);
                 })
 
                 .build();
+    }
+
+    public static Object invoke(Test r) {
+        ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
+        engine.eval(r.jsScript);
+        Invocable invocable = (Invocable) engine;
+        return invocable.invokeFunction(r.functionName, r.args);
     }
 }
 
