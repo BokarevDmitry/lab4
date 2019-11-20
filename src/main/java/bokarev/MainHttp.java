@@ -8,6 +8,7 @@ import akka.http.javadsl.Http;
 import akka.http.javadsl.ServerBinding;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
+import akka.http.javadsl.server.AllDirectives;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 
@@ -17,14 +18,14 @@ import java.util.concurrent.CompletionStage;
 //import static bokarev.StoreActor.Msg.GREET;
 
 
-public class Main {
+public class MainHttp extends AllDirectives {
     public static void main(String[] args) throws InterruptedException, IOException {
 
         ActorSystem system = ActorSystem.create("Actor-System");
 
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
-        MainHttp instance = new MainHttp(system);
+        MainHttp instance = new MainHttp();
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
                 instance.createRoute(system).flow(system, materializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
@@ -40,7 +41,7 @@ public class Main {
                 .thenAccept(unbound -> system.terminate());
 
 
-
+        
 
 
 
