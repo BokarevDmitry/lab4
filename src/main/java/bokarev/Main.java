@@ -13,35 +13,16 @@ import static com.sun.org.apache.xml.internal.serialize.Method.TEXT;
 
 public class Main {
     public static void main(String[] args) {
-        //System.out.println("test");
 
         ActorSystem system = ActorSystem.create("test");
+        ActorRef StorageActorRef = system.actorOf (StorageActor.props(), "Storage-Actor");
 
-        /*ActorRef readingActor = system.actorOf(
-                ReadingActor.props(TEXT),
-                "reading-Actor"
-        );*/
+        StorageActorRef.tell(new StorageActor.TestResultClass(1), ActorRef.noSender());
+        StorageActorRef.tell(new StorageActor.TestResultClass(7), ActorRef.noSender());
+        StorageActorRef.tell(new StorageActor.TestResultClass(2), ActorRef.noSender());
+
+        StorageActorRef.tell(new StorageActor.getTestsClass(11), ActorRef.noSender());
 
 
-       // readingActor.tell("hey", ActorRef.noSender());
-
-       //ActorRef WordCounterActorRef = system.actorOf(Props.create(WordCounterActor.class), "WordCounter-Actor");
-
-       //WordCounterActorRef.tell(new WordCounterActor.CountWords("ole ola"), readingActor);
-
-       ActorRef StorageActorRef = system.actorOf (StorageActor.props(), "Storage-Actor");
-
-       StorageActorRef.tell(new StorageActor.TestResultClass(1), ActorRef.noSender());
-       StorageActorRef.tell(new StorageActor.TestResultClass(7), ActorRef.noSender());
-       StorageActorRef.tell(new StorageActor.TestResultClass(2), ActorRef.noSender());
-
-       StorageActorRef.tell(new StorageActor.getTestsClass(11), ActorRef.noSender());
-
-       //readingActor.tell(new PrinterActor);
-
-        //readingActor.tell(new ReadingActor("a").Readlines(),
-        //        ActorRef.noSender());
-
-       // CompletableFuture<Object> future = ast
     }
 }

@@ -16,7 +16,7 @@ public class StorageActor extends AbstractActor {
     private ArrayList<Integer> testResults;
 
     public StorageActor() {
-        this.testResults = new ArrayList<Integer>();
+        this.testResults = new ArrayList<>();
     }
 
     public static Props props() {
