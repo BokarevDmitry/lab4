@@ -27,16 +27,16 @@ public class TestPasserActor extends AbstractActor {
         Integer packageID;
         String jsScript, functionName, testName;
         Double expectedResult;
-        ArrayList<Object> args;
+        //ArrayList<Object> args;
+        Object[] params;
 
-
-        public Test(Integer packageID, String jsScript, String functionName, String testName, Double expectedResult, ArrayList<Object> args) {
+        public Test(Integer packageID, String jsScript, String functionName, String testName, Double expectedResult, Object[] params) {
             this.packageID = packageID;
             this.jsScript = jsScript;
             this.functionName = functionName;
             this.testName = testName;
             this.expectedResult = expectedResult;
-            this.args = args;
+            this.params = params;
         }
     }
 
@@ -73,7 +73,7 @@ public class TestPasserActor extends AbstractActor {
         engine.eval(r.jsScript);
         Invocable invocable = (Invocable) engine;
         //System.out.println(r.jsScript + "\n" + r.functionName + "\n" + r.args);
-        return invocable.invokeFunction(r.functionName, r.args).toString();
+        return invocable.invokeFunction(r.functionName, r.params).toString();
     }
 }
 

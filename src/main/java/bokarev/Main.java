@@ -25,12 +25,10 @@ public class Main {
         //StorageActorRef.tell(new StorageActor.getTestsClass(11), ActorRef.noSender());
 
 
-        ArrayList<Object> arr = new ArrayList<>();
-        arr.add(1);
-        arr.add(2);
+        Object[] params = {2,1};
         ActorRef TestPasserActorRef = system.actorOf(TestPasserActor.props(), "TestPasser-Actor");
         TestPasserActorRef.tell(new TestPasserActor.Test(
                 11, "var divideFn = function(a,b) {return a+b}",
-                "divideFn", "test1", 2.0, arr), ActorRef.noSender());
+                "divideFn", "test1", 2.0, params), ActorRef.noSender());
     }
 }
