@@ -16,19 +16,19 @@ public class Main {
     public static void main(String[] args) {
 
         ActorSystem system = ActorSystem.create("test");
-        ActorRef StorageActorRef = system.actorOf (StorageActor.props(), "Storage-Actor");
+        ActorRef storageActorRef = system.actorOf (StorageActor.props(), "Storage-Actor");
 
-        //StorageActorRef.tell(new StorageActor.TestResultClass(1), ActorRef.noSender());
-        //StorageActorRef.tell(new StorageActor.TestResultClass(7), ActorRef.noSender());
-        //StorageActorRef.tell(new StorageActor.TestResultClass(2), ActorRef.noSender());
+        //storageActorRef.tell(new StorageActor.TestResultClass(1), ActorRef.noSender());
+        //storageActorRef.tell(new StorageActor.TestResultClass(7), ActorRef.noSender());
+        //storageActorRef.tell(new StorageActor.TestResultClass(2), ActorRef.noSender());
 
-        //StorageActorRef.tell(new StorageActor.getTestsClass(11), ActorRef.noSender());
+        //storageActorRef.tell(new StorageActor.getTestsClass(11), ActorRef.noSender());
 
 
         Object[] params = {2,1};
-        ActorRef TestPasserActorRef = system.actorOf(TestPasserActor.props(), "TestPasser-Actor");
-        TestPasserActorRef.tell(new TestPasserActor.Test(
+        ActorRef testPasserActorRef = system.actorOf(TestPasserActor.props(), "TestPasser-Actor");
+        testPasserActorRef.tell(new TestPasserActor.Test(
                 11, "var divideFn = function(a,b) {return a/b}",
-                "divideFn", "test1", 2.0, params), StorageActorRef);
+                "divideFn", "test1", 2.0, params), storageActorRef);
     }
 }
