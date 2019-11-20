@@ -42,12 +42,7 @@ public class MainHttp extends AllDirectives {
                 .thenAccept(unbound -> system.terminate());
 
 
-        private Route createRoute() {
-            return concat(
-                    path("hello", () ->
-                            get(() ->
-                                    complete("<h1>Say hello to akka-http</h1>"))));
-        }
+
 
 
 
@@ -72,5 +67,11 @@ public class MainHttp extends AllDirectives {
 
         Thread.sleep(1000);
         storageActorRef.tell(new StorageActor.getTestsClass(11), ActorRef.noSender());
+    }
+    private Route createRoute() {
+        return concat(
+                path("hello", () ->
+                        get(() ->
+                                complete("<h1>Say hello to akka-http</h1>"))));
     }
 }
