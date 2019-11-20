@@ -1,4 +1,4 @@
-package com.lightbend.akka.sample;
+package bokarev;
 
 import akka.actor.typed.ActorRef;
 import akka.actor.typed.Behavior;
