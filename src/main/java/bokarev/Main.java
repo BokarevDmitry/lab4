@@ -18,6 +18,7 @@ public class Main {
                 "reading-Actor"
         );
 
+        readingActor.tell(new ReadingActor().Readlines);
 
 
     }
