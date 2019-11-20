@@ -29,7 +29,7 @@ public class Main {
 
        //WordCounterActorRef.tell(new WordCounterActor.CountWords("ole ola"), readingActor);
 
-       ActorRef StorageActorRef = system.actorOf (StorageActor.props(TEXT), "Storage-Actor");
+       ActorRef StorageActorRef = system.actorOf (StorageActor.props(), "Storage-Actor");
 
        StorageActorRef.tell(new StorageActor.TestResultClass(1), ActorRef.noSender());
        StorageActorRef.tell(new StorageActor.getTestsClass(11), ActorRef.noSender());

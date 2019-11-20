@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="279e44f8-1009-414d-9238-0986831e3740" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/bokarev/Main.java" afterPath="$PROJECT_DIR$/src/main/java/bokarev/Main.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bokarev/StorageActor.java" afterPath="$PROJECT_DIR$/src/main/java/bokarev/StorageActor.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -38,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/bokarev/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="61" lean-forward="true" selection-start-line="34" selection-start-column="61" selection-end-line="34" selection-end-column="61" />
+            <state relative-caret-position="366">
+              <caret line="31" column="69" lean-forward="false" selection-start-line="31" selection-start-column="69" selection-end-line="31" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -72,16 +73,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StorageActor.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StorageActor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/bokarev/StorageActor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="61" column="76" lean-forward="false" selection-start-line="61" selection-start-column="76" selection-end-line="61" selection-end-column="76" />
+            <state relative-caret-position="230">
+              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#409#410#0" expanded="true" />
                 <element signature="e#468#469#0" expanded="true" />
-                <element signature="e#514#515#0" expanded="true" />
                 <element signature="e#575#576#0" expanded="true" />
                 <element signature="e#698#699#0" expanded="true" />
                 <element signature="e#750#751#0" expanded="true" />
@@ -164,8 +164,8 @@
         <option value="$PROJECT_DIR$/src/main/java/bokarev/CountWords.java" />
         <option value="$PROJECT_DIR$/src/main/java/bokarev/WordCounterActor.java" />
         <option value="$PROJECT_DIR$/src/main/java/bokarev/ReadingActor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/bokarev/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/bokarev/StorageActor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/bokarev/Main.java" />
       </list>
     </option>
   </component>
@@ -680,16 +680,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bokarev/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="61" lean-forward="true" selection-start-line="34" selection-start-column="61" selection-end-line="34" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bokarev/ReadingActor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-372">
@@ -712,13 +702,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bokarev/StorageActor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="61" column="76" lean-forward="false" selection-start-line="61" selection-start-column="76" selection-end-line="61" selection-end-column="76" />
+        <state relative-caret-position="230">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#409#410#0" expanded="true" />
             <element signature="e#468#469#0" expanded="true" />
-            <element signature="e#514#515#0" expanded="true" />
             <element signature="e#575#576#0" expanded="true" />
             <element signature="e#698#699#0" expanded="true" />
             <element signature="e#750#751#0" expanded="true" />
@@ -728,6 +717,16 @@
             <element signature="e#1031#1032#0" expanded="true" />
             <element signature="e#1075#1076#0" expanded="true" />
             <element signature="e#1133#1134#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bokarev/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="31" column="69" lean-forward="false" selection-start-line="31" selection-start-column="69" selection-end-line="31" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
