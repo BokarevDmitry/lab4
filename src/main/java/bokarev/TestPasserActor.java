@@ -58,11 +58,8 @@ public class TestPasserActor extends AbstractActor {
         return receiveBuilder()
                 .match(Test.class, r -> {
                     log.info("Received test message");
-                    invoke(r);
-                    ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
-                    engine.eval(r.jsScript);
-                    Invocable invocable = (Invocable) engine;
-                    invocable.invokeFunction(r.functionName, r.args);
+                    String result = invoke(r);
+
                 })
 
                 .match(StorageActor.getTestsClass.class, r -> {
@@ -73,11 +70,11 @@ public class TestPasserActor extends AbstractActor {
                 .build();
     }
 
-    public static Object invoke(Test a) throws ScriptException {
+    public static String invoke(Test a) throws ScriptException {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
         engine.eval(a.jsScript);
         Invocable invocable = (Invocable) engine;
-        return invocable.invokeFunction(a.functionName, a.args);
+        return invocable.invokeFunction(a.functionName, a.args).toString();
     }
 }
 
