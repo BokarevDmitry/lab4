@@ -2,6 +2,7 @@ package bokarev;
 
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
+import akka.http.javadsl.Http;
 
 //import static bokarev.StoreActor.Msg.GREET;
 
@@ -10,6 +11,14 @@ public class Main {
     public static void main(String[] args) throws InterruptedException{
 
         ActorSystem system = ActorSystem.create("Actor-System");
+
+        final Http http = Http.get(system);
+        fina;
+
+
+
+
+
         ActorRef storageActorRef = system.actorOf (StorageActor.props(), "Storage-Actor");
 
 
