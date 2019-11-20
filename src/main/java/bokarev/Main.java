@@ -25,9 +25,14 @@ public class Main {
 
        // readingActor.tell("hey", ActorRef.noSender());
 
-       ActorRef WordCounterActorRef = system.actorOf(Props.create(WordCounterActor.class), "WordCounter-Actor");
+       //ActorRef WordCounterActorRef = system.actorOf(Props.create(WordCounterActor.class), "WordCounter-Actor");
 
-       WordCounterActorRef.tell(new WordCounterActor.CountWords("ole ola"), readingActor);
+       //WordCounterActorRef.tell(new WordCounterActor.CountWords("ole ola"), readingActor);
+
+       ActorRef StorageActorRef = system.actorOf(Props.create(StorageActor.class), "Storage-Actor");
+
+       StorageActorRef.tell(new StorageActor.TestResultClass(1), ActorRef.noSender());
+       StorageActorRef.tell(new StorageActor.getTestsClass(11), ActorRef.noSender());
 
        //readingActor.tell(new PrinterActor);
 
