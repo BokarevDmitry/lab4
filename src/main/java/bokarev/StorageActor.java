@@ -18,7 +18,7 @@ public class StorageActor extends AbstractActor {
     }
 
     public static Props props(String text) {
-        return Props.create(ReadingActor.class, text);
+        return Props.create(StorageActor.class, text);
     }
 
     public static final class TestResultClass {
