@@ -59,7 +59,7 @@ public class StorageActor extends AbstractActor {
 
                 .match(getTestsClass.class, r -> {
                     log.info("Received Get Test Request message for package " + r.packageID);
-                    System.out.println("Test results: " + this.testResults);
+                    log.info("Test results: " + this.testResults);
                 })
 
                 .build();
