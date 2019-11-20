@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="279e44f8-1009-414d-9238-0986831e3740" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/bokarev/MyActor.java" afterPath="$PROJECT_DIR$/src/main/java/bokarev/MyActor.java" />
-    </list>
+    <list default="true" id="279e44f8-1009-414d-9238-0986831e3740" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,9 +51,10 @@
       <file leaf-file-name="ReadingActor.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/bokarev/ReadingActor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-448">
-              <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+            <state relative-caret-position="218">
+              <caret line="42" column="12" lean-forward="false" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#514#515#0" expanded="true" />
                 <element signature="e#546#547#0" expanded="true" />
                 <element signature="e#592#593#0" expanded="true" />
@@ -575,9 +574,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bokarev/ReadingActor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-448">
-          <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+        <state relative-caret-position="218">
+          <caret line="42" column="12" lean-forward="false" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#514#515#0" expanded="true" />
             <element signature="e#546#547#0" expanded="true" />
             <element signature="e#592#593#0" expanded="true" />
