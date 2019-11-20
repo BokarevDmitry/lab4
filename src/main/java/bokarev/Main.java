@@ -32,6 +32,7 @@ public class Main {
                 "divideFn", "test1", 2.0, params), storageActorRef);
 
 
+        Thread.sleep(
         storageActorRef.tell(new StorageActor.getTestsClass(11), ActorRef.noSender());
     }
 }
