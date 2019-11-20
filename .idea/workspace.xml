@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="279e44f8-1009-414d-9238-0986831e3740" name="Default" comment="" />
+    <list default="true" id="279e44f8-1009-414d-9238-0986831e3740" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/bokarev/Main.java" afterPath="$PROJECT_DIR$/src/main/java/bokarev/Main.java" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,8 +17,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/bokarev/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="24" column="10" lean-forward="false" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+            <state relative-caret-position="522">
+              <caret line="32" column="60" lean-forward="false" selection-start-line="32" selection-start-column="60" selection-end-line="32" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -101,8 +103,8 @@
         <option value="$PROJECT_DIR$/src/main/java/bokarev/WordCounterActor.java" />
         <option value="$PROJECT_DIR$/src/main/java/bokarev/ReadingActor.java" />
         <option value="$PROJECT_DIR$/src/main/java/bokarev/StorageActor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/bokarev/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/bokarev/TestPasserActor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/bokarev/Main.java" />
       </list>
     </option>
   </component>
@@ -679,8 +681,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bokarev/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="24" column="10" lean-forward="false" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+        <state relative-caret-position="522">
+          <caret line="32" column="60" lean-forward="false" selection-start-line="32" selection-start-column="60" selection-end-line="32" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
