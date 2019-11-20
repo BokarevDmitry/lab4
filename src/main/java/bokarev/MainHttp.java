@@ -24,7 +24,7 @@ import java.util.concurrent.Future;
 
 
 public class MainHttp extends AllDirectives {
-    public static void main(String[] args) throws InterruptedException, IOException {
+    public static void main(String[] args) throws Exception, InterruptedException, IOException {
 
         ActorSystem system = ActorSystem.create("Actor-System");
 
@@ -72,6 +72,12 @@ public class MainHttp extends AllDirectives {
         Thread.sleep(1000);
         storageActorRef.tell(new StorageActor.getTestsClass(11), ActorRef.noSender());
         */
+    }
+    private Route createRoute(ActorSystem system) {
+        return concat(
+                path("hello", () ->
+                        get(() ->
+                                complete("<h1>Say hello to akka-http</h1>"))));
     }
    /* private Route createRoute(ActorSystem system) {
         return route(
