@@ -22,7 +22,9 @@ public class Main {
                 "reading-Actor"
         );
 
-        ActorRef printerActorRef = system.actorOf(Props.create(PrinterActor.class), "Printer-Actor");
+        readingActor.tell(new ReadingActor("hey"), ActorRef.noSender());
+
+       // ActorRef printerActorRef = system.actorOf(Props.create(PrinterActor.class), "Printer-Actor");
 
        //readingActor.tell(new PrinterActor);
 
