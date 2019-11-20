@@ -48,7 +48,7 @@ public class MainHttp extends AllDirectives {
 
 
 
-        ActorRef storageActorRef = system.actorOf (StorageActor.props(), "Storage-Actor");
+        /*ActorRef storageActorRef = system.actorOf (StorageActor.props(), "Storage-Actor");
 
 
         //storageActorRef.tell(new RouterActor.TestResult(1), ActorRef.noSender());
@@ -67,6 +67,7 @@ public class MainHttp extends AllDirectives {
 
         Thread.sleep(1000);
         storageActorRef.tell(new StorageActor.getTestsClass(11), ActorRef.noSender());
+        */
     }
     private Route createRoute() {
         return concat(
