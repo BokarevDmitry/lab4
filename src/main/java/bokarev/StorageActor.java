@@ -6,15 +6,17 @@ import akka.actor.Props;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
 
+import java.util.ArrayList;
+
 
 public class StorageActor extends AbstractActor {
 
     private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), this);
 
-    private String text;
+    private ArrayList<Integer> tests;
 
-    public StorageActor(String text) {
-        this.text = text;
+    public StorageActor() {
+        this.tests = new ArrayList<Integer>();
     }
 
     public static Props props(String text) {
