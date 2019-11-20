@@ -70,7 +70,7 @@ public class ReadingActor extends AbstractActor {
 
                     ActorRef printerActorRef = getContext().actorOf(Props.create(PrinterActor.class), "Printer-Actor");
                     printerActorRef.forward(new PrinterActor.PrintFinalResult(totalNumberOfWords), getContext());
-//                    printerActorRef.tell(new PrinterActor.PrintFinalResult(totalNumberOfWords), getSelf());
+                    printerActorRef.tell(new PrinterActor.PrintFinalResult(totalNumberOfWords), getSelf());
 */
                 })
                 .build();

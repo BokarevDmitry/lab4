@@ -19,7 +19,7 @@ public class StorageActor extends AbstractActor {
     }
 
     public static Props props() {
-        return Props.create(StorageActor.class);
+        return Props.create(RouterActor.class);
     }
 
     static final class TestResult {
@@ -46,12 +46,12 @@ public class StorageActor extends AbstractActor {
 
     @Override
     public void preStart() {
-        log.info("Starting StorageActor {}", this);
+        log.info("Starting RouterActor {}", this);
     }
 
     @Override
     public void postStop() {
-        log.info("Stopping StorageActor {}", this);
+        log.info("Stopping RouterActor {}", this);
     }
 
     @Override

@@ -56,10 +56,6 @@ public class TestPasserActor extends AbstractActor {
                     getSender().tell(new StorageActor.TestResult(r.testName, r.expectedResult, r.params, res), ActorRef.noSender());
                 })
 
-                .match(StorageActor.getTestsClass.class, r -> {
-                    log.info("Received Get Test Request message for package " + r.packageID);
-                })
-
                 .build();
     }
 
