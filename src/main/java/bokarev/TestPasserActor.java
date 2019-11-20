@@ -9,33 +9,28 @@ import akka.event.LoggingAdapter;
 import java.util.ArrayList;
 
 
-public class TestPasserAcor extends AbstractActor {
+public class TestPasserActor extends AbstractActor {
 
     private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), this);
 
     private ArrayList<Integer> testResults;
 
-    public TestPasserAcor() {
+    public TestPasserActor() {
         this.testResults = new ArrayList<>();
     }
 
     public static Props props() {
-        return Props.create(TestPasserAcor.class);
+        return Props.create(TestPasserActor.class);
     }
 
-    public static final class TestResultClass {
-        int testResult;
+    public static final class Test {
+        Integer packageID;
+        String jsScript;
+        String functionName;
+        
 
-        public TestResultClass(int testResult) {
+        public Test(int testResult) {
             this.testResult = testResult;
-        }
-    }
-
-    public static final class getTestsClass {
-        int packageID;
-
-        public getTestsClass(int packageID) {
-            this.packageID = packageID;
         }
     }
 

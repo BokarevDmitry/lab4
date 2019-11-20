@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="279e44f8-1009-414d-9238-0986831e3740" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/bokarev/TestPasserActor.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bokarev/TestPasserActor.java" afterPath="$PROJECT_DIR$/src/main/java/bokarev/TestPasserActor.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -99,22 +99,20 @@
       <file leaf-file-name="TestPasserActor.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/bokarev/TestPasserActor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="22" column="42" lean-forward="false" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+            <state relative-caret-position="324">
+              <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#413#414#0" expanded="true" />
-                <element signature="e#465#466#0" expanded="true" />
-                <element signature="e#500#501#0" expanded="true" />
-                <element signature="e#557#558#0" expanded="true" />
-                <element signature="e#680#681#0" expanded="true" />
-                <element signature="e#732#733#0" expanded="true" />
-                <element signature="e#855#856#0" expanded="true" />
-                <element signature="e#905#906#0" expanded="true" />
-                <element signature="e#955#956#0" expanded="true" />
-                <element signature="e#1013#1014#0" expanded="true" />
-                <element signature="e#1057#1058#0" expanded="true" />
-                <element signature="e#1115#1116#0" expanded="true" />
+                <element signature="e#415#416#0" expanded="true" />
+                <element signature="e#467#468#0" expanded="true" />
+                <element signature="e#502#503#0" expanded="true" />
+                <element signature="e#560#561#0" expanded="true" />
+                <element signature="e#727#728#0" expanded="true" />
+                <element signature="e#779#780#0" expanded="true" />
+                <element signature="e#829#830#0" expanded="true" />
+                <element signature="e#887#888#0" expanded="true" />
+                <element signature="e#931#932#0" expanded="true" />
+                <element signature="e#989#990#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -251,15 +249,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="bokarev" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lab4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lab4" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="bokarev" type="462c0819:PsiDirectoryNode" />
-              <item name="TestPasserActor.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
             </path>
           </expand>
           <select />
@@ -768,22 +757,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bokarev/TestPasserActor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="22" column="42" lean-forward="false" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+        <state relative-caret-position="324">
+          <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#413#414#0" expanded="true" />
-            <element signature="e#465#466#0" expanded="true" />
-            <element signature="e#500#501#0" expanded="true" />
-            <element signature="e#557#558#0" expanded="true" />
-            <element signature="e#680#681#0" expanded="true" />
-            <element signature="e#732#733#0" expanded="true" />
-            <element signature="e#855#856#0" expanded="true" />
-            <element signature="e#905#906#0" expanded="true" />
-            <element signature="e#955#956#0" expanded="true" />
-            <element signature="e#1013#1014#0" expanded="true" />
-            <element signature="e#1057#1058#0" expanded="true" />
-            <element signature="e#1115#1116#0" expanded="true" />
+            <element signature="e#415#416#0" expanded="true" />
+            <element signature="e#467#468#0" expanded="true" />
+            <element signature="e#502#503#0" expanded="true" />
+            <element signature="e#560#561#0" expanded="true" />
+            <element signature="e#727#728#0" expanded="true" />
+            <element signature="e#779#780#0" expanded="true" />
+            <element signature="e#829#830#0" expanded="true" />
+            <element signature="e#887#888#0" expanded="true" />
+            <element signature="e#931#932#0" expanded="true" />
+            <element signature="e#989#990#0" expanded="true" />
           </folding>
         </state>
       </provider>
