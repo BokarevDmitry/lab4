@@ -23,6 +23,7 @@ public class Main {
 
         StorageActorRef.tell(new StorageActor.getTestsClass(11), ActorRef.noSender());
 
-
+        ActorRef TestPasserActorRef = system.actorOf(TestPasserActor.props(), "TestPasser-Actor");
+        TestPasserActorRef.tell(new TestPasserActor.Test());
     }
 }
