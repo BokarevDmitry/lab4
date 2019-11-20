@@ -26,7 +26,8 @@ public class Main {
 
 
         ArrayList<Integer> arr = new ArrayList<>();
-        arr.add(1,2);
+        arr.add(1);
+        arr.add(2);
         ActorRef TestPasserActorRef = system.actorOf(TestPasserActor.props(), "TestPasser-Actor");
         TestPasserActorRef.tell(new TestPasserActor.Test(
                 11, "var divideFn = function(a,b) { return a/b} ",
