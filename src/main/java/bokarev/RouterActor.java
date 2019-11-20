@@ -1,6 +1,8 @@
 package bokarev;
 
 import akka.actor.AbstractActor;
+import akka.actor.ActorRef;
+import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
@@ -12,8 +14,9 @@ public class RouterActor extends AbstractActor {
 
     private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), this);
 
-    public RouterActor() {
 
+    public RouterActor(ActorSystem system) {
+        ActorRef storageActorRef = system.actorOf (StorageActor.props(), "Storage-Actor");
     }
 
     public static Props props() {
