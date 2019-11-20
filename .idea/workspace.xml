@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="279e44f8-1009-414d-9238-0986831e3740" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/bokarev/TestPasserActor.java" afterPath="$PROJECT_DIR$/src/main/java/bokarev/TestPasserActor.java" />
-    </list>
+    <list default="true" id="279e44f8-1009-414d-9238-0986831e3740" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -100,7 +98,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/bokarev/TestPasserActor.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="389">
-              <caret line="72" column="115" lean-forward="true" selection-start-line="72" selection-start-column="115" selection-end-line="72" selection-end-column="115" />
+              <caret line="72" column="51" lean-forward="true" selection-start-line="72" selection-start-column="51" selection-end-line="72" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#410#411#0" expanded="true" />
@@ -756,7 +754,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/bokarev/TestPasserActor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="389">
-          <caret line="72" column="115" lean-forward="true" selection-start-line="72" selection-start-column="115" selection-end-line="72" selection-end-column="115" />
+          <caret line="72" column="51" lean-forward="true" selection-start-line="72" selection-start-column="51" selection-end-line="72" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#410#411#0" expanded="true" />
