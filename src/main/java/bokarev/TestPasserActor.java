@@ -6,7 +6,6 @@ import akka.event.Logging;
 import akka.event.LoggingAdapter;
 
 import javax.script.*;
-import java.util.ArrayList;
 
 
 public class TestPasserActor extends AbstractActor {
@@ -53,7 +52,7 @@ public class TestPasserActor extends AbstractActor {
                     log.info("Received test message");
                     String result = invoke(r);
                     log.info("RESULT: " + (Double.parseDouble(result) == r.expectedResult));
-
+                    getSender().tell(StorageActor.TestResult.class());
                 })
 
                 .match(StorageActor.getTestsClass.class, r -> {

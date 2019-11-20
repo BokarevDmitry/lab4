@@ -1,7 +1,6 @@
 package bokarev;
 
 import akka.actor.AbstractActor;
-import akka.actor.ActorRef;
 import akka.actor.Props;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
@@ -23,10 +22,10 @@ public class StorageActor extends AbstractActor {
         return Props.create(StorageActor.class);
     }
 
-    public static final class TestResultClass {
+    public static final class TestResult {
         int testResult;
 
-        public TestResultClass(int testResult) {
+        public TestResult(int testResult) {
             this.testResult = testResult;
         }
     }
@@ -52,7 +51,7 @@ public class StorageActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return receiveBuilder()
-                .match(TestResultClass.class, r -> {
+                .match(TestResult.class, r -> {
                     log.info("Received test result message");
                     this.testResults.add(r.testResult);
                 })
