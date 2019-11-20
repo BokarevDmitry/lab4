@@ -13,7 +13,7 @@ import static com.sun.org.apache.xml.internal.serialize.Method.TEXT;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("test");
+        //System.out.println("test");
 
         ActorSystem system = ActorSystem.create("test");
 
