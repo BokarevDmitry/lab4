@@ -42,12 +42,12 @@ public class TestPasserActor extends AbstractActor {
 
     @Override
     public void preStart() {
-        log.info("Starting StorageActor {}", this);
+        log.info("Starting TestPasserActor {}", this);
     }
 
     @Override
     public void postStop() {
-        log.info("Stopping StorageActor {}", this);
+        log.info("Stopping TestPasserActor {}", this);
     }
 
     @Override
