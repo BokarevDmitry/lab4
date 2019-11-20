@@ -1,8 +1,8 @@
-package com.lightbend.akka.sample;
+package bokarev;
 
-import akka.actor.typed.ActorRef;
-import akka.actor.typed.Behavior;
-import akka.actor.typed.javadsl.*;
+import akka.actor.ActorRef;
+import akka.actor.Behavior;
+import akka.actor.javadsl.*;
 
 
 

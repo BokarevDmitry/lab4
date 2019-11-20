@@ -1,6 +1,6 @@
 package bokarev;
 
-import akka.actor.typed.ActorSystem;
+import akka.actor.ActorSystem;
 
 
 
@@ -9,7 +9,7 @@ import java.io.IOException;
 public class AkkaQuickstart {
   public static void main(String[] args) {
     //#actor-system
-    final ActorSystem<com.lightbend.akka.sample.GreeterMain.Start> greeterMain = ActorSystem.create(GreeterMain.create(), "helloakka");
+    final ActorSystem<bokarev.GreeterMain.Start> greeterMain = ActorSystem.create(GreeterMain.create(), "helloakka");
     //#actor-system
 
     //#main-send-messages

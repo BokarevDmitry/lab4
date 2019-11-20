@@ -1,7 +1,8 @@
 package bokarev;
 
-import akka.actor.typed.Behavior;
-import akka.actor.typed.javadsl.*;
+import akka.actor.Behavior;
+import akka.actor.javadsl.*;
+
 
 public class GreeterBot extends AbstractBehavior<Greeter.Greeted> {
 
