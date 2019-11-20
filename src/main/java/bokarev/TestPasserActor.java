@@ -56,7 +56,7 @@ public class TestPasserActor extends AbstractActor {
                 .match(Test.class, r -> {
                     log.info("Received test message");
                     String result = invoke(r);
-                    log.info("RESULT: " + result);
+                    log.info("RESULT: " + (Double.parseDouble(result) == r.expectedResult));
 
                 })
 
