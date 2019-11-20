@@ -26,11 +26,11 @@ public class TestPasserActor extends AbstractActor {
     public static class Test {
         Integer packageID;
         String jsScript, functionName, testName;
-        Float expectedResult;
+        Double expectedResult;
         ArrayList<Integer> args;
 
 
-        public Test(Integer packageID, String jsScript, String functionName, String testName, Float expectedResult, ArrayList<Integer> args) {
+        public Test(Integer packageID, String jsScript, String functionName, String testName, Double expectedResult, ArrayList<Integer> args) {
             this.packageID = packageID;
             this.jsScript = jsScript;
             this.functionName = functionName;

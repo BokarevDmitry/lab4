@@ -6,6 +6,7 @@ import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.japi.pf.ReceiveBuilder;
 
+import java.util.ArrayList;
 import java.util.concurrent.CompletableFuture;
 
 //import static bokarev.StoreActor.Msg.GREET;
@@ -23,9 +24,12 @@ public class Main {
 
         StorageActorRef.tell(new StorageActor.getTestsClass(11), ActorRef.noSender());
 
+
+        ArrayList<Integer> arr = new ArrayList<>();
+        arr.add(1,2);
         ActorRef TestPasserActorRef = system.actorOf(TestPasserActor.props(), "TestPasser-Actor");
         TestPasserActorRef.tell(new TestPasserActor.Test(
                 11, "var divideFn = function(a,b) { return a/b} ",
-                "divideFn", "test1", ));
+                "divideFn", "test1", 2.0, arr), ActorRef.noSender());
     }
 }
