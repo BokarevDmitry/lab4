@@ -25,7 +25,7 @@ public class Main {
         //StorageActorRef.tell(new StorageActor.getTestsClass(11), ActorRef.noSender());
 
 
-        ArrayList<Integer> arr = new ArrayList<>();
+        ArrayList<Object> arr = new ArrayList<>();
         arr.add(1);
         arr.add(2);
         ActorRef TestPasserActorRef = system.actorOf(TestPasserActor.props(), "TestPasser-Actor");
