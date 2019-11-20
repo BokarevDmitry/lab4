@@ -6,15 +6,18 @@ import akka.actor.ActorSystem;
 import akka.http.javadsl.ConnectHttp;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.ServerBinding;
+import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.Route;
+import akka.pattern.Patterns;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 
 import java.io.IOException;
 import java.util.concurrent.CompletionStage;
+import java.util.concurrent.Future;
 
 
 //import static bokarev.StoreActor.Msg.GREET;
@@ -70,10 +73,30 @@ public class MainHttp extends AllDirectives {
         storageActorRef.tell(new StorageActor.getTestsClass(11), ActorRef.noSender());
         */
     }
-    private Route createRoute(ActorSystem system) {
-        return concat(
-                path("hello", () ->
+   /* private Route createRoute(ActorSystem system) {
+        return route(
+                path("semaphore", () ->
+                        route(
+                                get( () -> {
+                                    Future<Object> result = Patterns.ask(testPackageActor,
+                                            SemaphoreActor.makeRequest(), 5000);
+                                    return completeOKWithFuture(result, Jackson.marshaller());
+                                }))),
+                path("test", () ->
+                        route(
+                                post(() ->
+                                        entity(Jackson.unmarshaller(TestPackageMsg.class), msg -> {
+                                            testPackageActor.tell(msg, ActorRef.noSender());
+                                            return complete("Test started!");
+                                        })))),
+                path("put", () ->
                         get(() ->
-                                complete("<h1>Say hello to akka-http</h1>"))));
-    }
+                                parameter("key", (key) ->
+                                        parameter("value", (value) ->
+                                        {
+                                            storeActor.tell(new StoreActor.StoreMessage(key, value), ActorRef.noSender());
+                                            return complete("value saved to store ! key=" + key + " value=" + value);
+                                        }))));
+    }*/
+
 }
