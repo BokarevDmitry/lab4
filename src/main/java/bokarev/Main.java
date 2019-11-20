@@ -27,7 +27,7 @@ public class Main {
 
        ActorRef WordCounterActorRef = system.actorOf(Props.create(WordCounterActor.class), "WordCounter-Actor");
 
-       WordCounterActorRef.tell(new WordCounterActor.CountWords("ole ola"), ActorRef.noSender());
+       WordCounterActorRef.tell(new WordCounterActor.CountWords("ole ola"), readingActor);
 
        //readingActor.tell(new PrinterActor);
 
