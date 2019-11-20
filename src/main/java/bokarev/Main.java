@@ -22,14 +22,17 @@ public class Main {
                 "reading-Actor"
         );
 
-        readingActor.tell("hey", ActorRef.noSender());
 
-       // ActorRef printerActorRef = system.actorOf(Props.create(PrinterActor.class), "Printer-Actor");
+       // readingActor.tell("hey", ActorRef.noSender());
+
+       ActorRef WordCounterActorRef = system.actorOf(Props.create(WordCounterActor.class), "WordCounter-Actor");
+
+       WordCounterActorRef.tell(new CountWords("ole ola"), ActorRef.noSender());
 
        //readingActor.tell(new PrinterActor);
 
-       // readingActor.tell(new ReadingActor().Readlines(),
-         //       ActorRef.noSender());
+        //readingActor.tell(new ReadingActor("a").Readlines(),
+        //        ActorRef.noSender());
 
        // CompletableFuture<Object> future = ast
     }

@@ -1,4 +1,9 @@
 package bokarev;
 
-public class CountWords {
+public final class CountWords {
+    String line;
+
+    public CountWords(String line) {
+        this.line = line;
+    }
 }
