@@ -1,6 +1,7 @@
 package bokarev;
 
 import akka.actor.AbstractActor;
+import akka.actor.ActorRef;
 import akka.actor.Props;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
@@ -50,9 +51,9 @@ public class TestPasserActor extends AbstractActor {
         return receiveBuilder()
                 .match(Test.class, r -> {
                     log.info("Received test message");
-                    String result = invoke(r);
-                    log.info("RESULT: " + (Double.parseDouble(result) == r.expectedResult));
-                    getSender().tell(StorageActor.TestResult.class());
+                    Boolean res = (Double.parseDouble(invoke(r)) == r.expectedResult);
+                    log.info("RESULT: " + (Double.parseDouble(invoke(r)) == r.expectedResult));
+                    getSender().tell(new StorageActor.TestResult(r.testName, r.expectedResult, r.params, res), ActorRef.noSender());
                 })
 
                 .match(StorageActor.getTestsClass.class, r -> {

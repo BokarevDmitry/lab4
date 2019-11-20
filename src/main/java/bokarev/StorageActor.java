@@ -12,7 +12,7 @@ public class StorageActor extends AbstractActor {
 
     private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), this);
 
-    private ArrayList<Integer> testResults;
+    private ArrayList<TestResult> testResults;
 
     public StorageActor() {
         this.testResults = new ArrayList<>();
@@ -22,10 +22,16 @@ public class StorageActor extends AbstractActor {
         return Props.create(StorageActor.class);
     }
 
-    public static final class TestResult {
-        int testResult;
+    static final class TestResult {
+        String testName;
+        Double expectedResult;
+        Object[] params;
+        Boolean testResult;
 
-        public TestResult(int testResult) {
+        TestResult(String testName, Double expectedResult, Object[] params, Boolean testResult) {
+            this.testName = testName;
+            this.expectedResult = expectedResult;
+            this.params = params;
             this.testResult = testResult;
         }
     }
@@ -53,7 +59,7 @@ public class StorageActor extends AbstractActor {
         return receiveBuilder()
                 .match(TestResult.class, r -> {
                     log.info("Received test result message");
-                    this.testResults.add(r.testResult);
+                    this.testResults.add(r);
                 })
 
                 .match(getTestsClass.class, r -> {
