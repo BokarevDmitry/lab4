@@ -13,7 +13,7 @@ import java.util.concurrent.CompletableFuture;
 import static com.sun.org.apache.xml.internal.serialize.Method.TEXT;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException{
 
         ActorSystem system = ActorSystem.create("test");
         ActorRef storageActorRef = system.actorOf (StorageActor.props(), "Storage-Actor");
@@ -32,7 +32,7 @@ public class Main {
                 "divideFn", "test1", 2.0, params), storageActorRef);
 
 
-        Thread.sleep(
+        Thread.sleep(1000);
         storageActorRef.tell(new StorageActor.getTestsClass(11), ActorRef.noSender());
     }
 }
