@@ -6,6 +6,8 @@ import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.japi.pf.ReceiveBuilder;
 
+import java.util.concurrent.CompletableFuture;
+
 import static bokarev.StoreActor.Msg.GREET;
 import static com.sun.org.apache.xml.internal.serialize.Method.TEXT;
 
@@ -18,8 +20,9 @@ public class Main {
                 "reading-Actor"
         );
 
-        readingActor.tell(new ReadingActor().Readlines);
+        readingActor.tell(new ReadingActor().Readlines(),
+                ActorRef.noSender());
 
-
+        CompletableFuture<Object> future = ast
     }
 }
