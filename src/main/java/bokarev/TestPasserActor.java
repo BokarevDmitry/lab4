@@ -70,11 +70,11 @@ public class TestPasserActor extends AbstractActor {
                 .build();
     }
 
-    public static String invoke(Test a) throws ScriptException {
+    public static String invoke(Test r) throws ScriptException {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
-        engine.eval(a.jsScript);
+        engine.eval(r.jsScript);
         Invocable invocable = (Invocable) engine;
-        return invocable.invokeFunction(a.functionName, a.args).toString();
+        return invocable.invokeFunction() .toString();
     }
 }
 
