@@ -46,7 +46,10 @@ public class RouterActor extends AbstractActor {
         return receiveBuilder()
                 .match(MainHttp.Test.class, test -> {
                     log.info("Received test message");
-
+                    int count = test.testsLists.size();
+                    for (int i=0; i<count; i++) {
+                        ActorRef testpasserActor =
+                    }
                 })
 
                 .build();

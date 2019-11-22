@@ -25,9 +25,6 @@ import java.util.concurrent.Future;
 //import scala.compat.java8.OptionConverters;
 
 
-//import static bokarev.StoreActor.Msg.GREET;
-
-
 public class MainHttp extends AllDirectives {
     public static void main(String[] args) throws Exception, InterruptedException, IOException {
 
