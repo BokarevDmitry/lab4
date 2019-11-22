@@ -37,7 +37,7 @@ public class TestPasserActor extends AbstractActor {
                     test.setResult(res);
                     log.info("TEST IS DONE, RESULT: " + res);
                     getSender().tell(test, ActorRef.noSender());
-                    getSelf().tell(kill());
+                    getContext().stop(getSelf());
                 })
 
                 .build();
