@@ -95,6 +95,22 @@ public class MainHttp extends AllDirectives {
             this.testsLists = new ArrayList<>();
             this.testsLists.add(test.oneTest);
         }
+
+        public Integer getPackageId() {
+            return packageId;
+        }
+
+        public String getJsScript() {
+            return jsScript;
+        }
+
+        public String getFunctionName() {
+            return functionName;
+        }
+
+        public ArrayList<OneTest> getTestsLists() {
+            return testsLists;
+        }
     }
 
     static class OneTest {
@@ -113,6 +129,22 @@ public class MainHttp extends AllDirectives {
             this.expectedResult = expectedResult;
             this.params = params;
             this.result = null;
+        }
+
+        public String getTestName() {
+            return testName;
+        }
+
+        public Double getExpectedResult() {
+            return expectedResult;
+        }
+
+        public Object[] getParams() {
+            return params;
+        }
+
+        public Boolean getResult() {
+            return result;
         }
     }
 
@@ -135,6 +167,22 @@ public class MainHttp extends AllDirectives {
 
         void setResult (Boolean result){
             this.oneTest.result = result;
+        }
+
+        public Integer getPackageId() {
+            return packageId;
+        }
+
+        public String getJsScript() {
+            return jsScript;
+        }
+
+        public String getFunctionName() {
+            return functionName;
+        }
+
+        public OneTest getOneTest() {
+            return oneTest;
         }
     }
 
