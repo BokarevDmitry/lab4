@@ -130,21 +130,11 @@ public class MainHttp extends AllDirectives {
         Tests(@JsonProperty("packageId") Integer packageId,
               @JsonProperty("jsScript") String jsScript,
               @JsonProperty("functionName") String functionName,
-              @JsonProperty("")) {
+              @JsonProperty("tests") List<TestsList> testsLists) {
             this.packageId = packageId;
             this.jsScript = jsScript;
             this.functionName = functionName;
-
-        }
-
-
-        public Tests(Integer packageID, String jsScript, String functionName, String testName, Double expectedResult, Object[] params) {
-            this.packageID = packageID;
-            this.jsScript = jsScript;
-            this.functionName = functionName;
-            this.testName = testName;
-            this.expectedResult = expectedResult;
-            this.params = params;
+            this.testsLists = testsLists;
         }
     }
 }
