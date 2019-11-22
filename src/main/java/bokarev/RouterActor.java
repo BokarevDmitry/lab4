@@ -23,7 +23,7 @@ public class RouterActor extends AbstractActor {
     }*/
 
     public static Props props(ActorSystem system) {
-        return Props.create(RouterActor.class);
+        return Props.create(RouterActor.class, system);
     }
 
     static final class TestResult {
