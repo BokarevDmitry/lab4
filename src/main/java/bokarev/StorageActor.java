@@ -1,6 +1,7 @@
 package bokarev;
 
 import akka.actor.AbstractActor;
+import akka.actor.ActorRef;
 import akka.actor.Props;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
@@ -45,8 +46,12 @@ public class StorageActor extends AbstractActor {
                     }
                 })
                 .match(Classes.TestGetter.class, r -> {
-                    log.info("Received Get Test Request message for package " + r.packageID);
-                    getSender().tell(this.testResults.get(r.packageID), getSelf());
+                    log.info("Received Get Test Request message for package " + r.packageId);
+                    if (this.testResults.containsKey(r.packageId)) {
+                        getSender().tell(this.testResults.get(r.packageId), getSelf());
+                    } else {
+                        getSender().tell("No tests with this packageId", ActorRef.noSender());
+                    }
                 })
 
                 .build();

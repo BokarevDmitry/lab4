@@ -121,14 +121,14 @@ public class Classes {
     }
 
     public static final class TestGetter {
-        int packageID;
+        int packageId;
 
-        TestGetter(int packageID) {
-            this.packageID = packageID;
+        TestGetter(int packageId) {
+            this.packageId = packageId;
         }
 
-        public int getPackageID() {
-            return packageID;
+        public int getPackageId() {
+            return packageId;
         }
     }
 }
