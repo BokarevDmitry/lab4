@@ -45,6 +45,9 @@ public class RouterActor extends AbstractActor {
                         testPasserActor.tell(new MainHttp.TestForImpl(test, i), storageActor);
                     }
                 })
+                .match(MainHttp.TestGetter.class, r -> {
+
+                })
                 .build();
     }
 }
