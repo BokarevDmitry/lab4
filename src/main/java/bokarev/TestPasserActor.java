@@ -45,7 +45,7 @@ public class TestPasserActor extends AbstractActor {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
         engine.eval(r.jsScript);
         Invocable invocable = (Invocable) engine;
-        return invocable.invokeFunction(r.functionName, r.testsLists.get(0).params).toString();
+        return invocable.invokeFunction(r.functionName, r.params).toString();
     }
 }
 
