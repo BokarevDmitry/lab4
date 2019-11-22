@@ -88,7 +88,7 @@ public class MainHttp extends AllDirectives {
                             return complete("sent to router-actor");
                         })));
     }*/
-    private Route createRoute(ActorSystem system) {
+    private Route createRoute(ActorRef routerActor) {
         return route(
                 /*path("get", () ->
                         route(
@@ -100,8 +100,8 @@ public class MainHttp extends AllDirectives {
                 path("post", () ->
                         route(
                                 post(() ->
-                                        entity(Jackson.unmarshaller(TestPackageMsg.class), msg -> {
-                                            testPackageActor.tell(msg, ActorRef.noSender());
+                                        entity(Jackson.unmarshaller(Test.class), test -> {
+                                            routerActor.tell(test, ActorRef.noSender());
                                             return complete("Test started!");
                                         })))));
     }
@@ -121,13 +121,13 @@ public class MainHttp extends AllDirectives {
         }
     }
 
-    private static class Tests {
+    public static class Test {
         final Integer packageId;
         final String jsScript, functionName;
         final List<TestsList> testsLists;
 
         @JsonCreator
-        Tests(@JsonProperty("packageId") Integer packageId,
+        Test(@JsonProperty("packageId") Integer packageId,
               @JsonProperty("jsScript") String jsScript,
               @JsonProperty("functionName") String functionName,
               @JsonProperty("tests") List<TestsList> testsLists) {

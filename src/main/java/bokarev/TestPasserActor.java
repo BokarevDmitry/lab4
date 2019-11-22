@@ -49,7 +49,7 @@ public class TestPasserActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return receiveBuilder()
-                .match(Test.class, r -> {
+                .match(MainHttp.Test.class, r -> {
                     log.info("Received test message");
                     Boolean res = (Double.parseDouble(invoke(r)) == r.expectedResult);
                     log.info("RESULT: " + (Double.parseDouble(invoke(r)) == r.expectedResult));
