@@ -46,10 +46,12 @@ public class MainHttp extends AllDirectives {
         return route(
                 path("get", () ->
                         route(
-                                get(() -> {
-                                    Future<Object> future = Patterns.ask(routerActor, new Classes.TestGetter(11), 5000);
-                                    return completeOKWithFuture(future, Jackson.marshaller());
-                                }))),
+                                get(() ->
+                                    parameter("packageId", packageId -> {
+                                        Future<Object> future = Patterns.ask(routerActor, new Classes.TestGetter(Integer.getInteger(packageId)), 5000);
+                                        return completeOKWithFuture(future, Jackson.marshaller());
+                                    })
+                                ))),
                 path("post", () ->
                         route(
                                 post(() ->
