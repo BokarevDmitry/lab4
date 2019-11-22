@@ -51,7 +51,7 @@ public class RouterActor extends AbstractActor {
                     int count = test.testsLists.size();
                     for (int i=0; i<count; i++) {
                         ActorRef testPasserActor = getContext().actorOf(TestPasserActor.props(), "TestPasser-Actor"+i);
-                        testPasserActor.tell(new MainHttp.TestForImpl(test, i), storageActor);
+                        testPasserActor.tell(new MainHttp.TestForImpl(test, i), ActorRef.noSender());
                     }
                 })
 
