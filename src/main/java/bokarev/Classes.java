@@ -126,5 +126,9 @@ public class Classes {
         TestGetter(int packageID) {
             this.packageID = packageID;
         }
+
+        public int getPackageID() {
+            return packageID;
+        }
     }
 }
