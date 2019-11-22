@@ -48,8 +48,8 @@ public class StorageActor extends AbstractActor {
                 .match(MainHttp.TestForImpl.class, test -> {
                     log.info("Received test result message");
 
-                    if (this.testResults.get(test.packageId)) {
-
+                    if (this.testResults.containsKey(test.packageId)) {
+                        this.testResults.put()
                     } else {
                         MainHttp.TestPackage testPackage = new MainHttp.TestPackage(test);
                         this.testResults.put(test.packageId, testPackage);
