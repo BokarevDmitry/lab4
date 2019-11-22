@@ -16,7 +16,7 @@ public class RouterActor extends AbstractActor {
 
 
     public RouterActor(ActorSystem system) {
-        //ActorRef storageActorRef = system.actorOf (StorageActor.props(), "Storage-Actor");
+        ActorRef storageActorRef = system.actorOf (StorageActor.props(), "Storage-Actor");
         //ActorRef testPasserAcrorRef = system.actorOf(TestPasserActor.props(), "TestPasser-Actor");
     }
 
@@ -43,13 +43,14 @@ public class RouterActor extends AbstractActor {
 
     @Override
     public Receive createReceive() {
+        ActorRef storageActor = getContext().findChild("akka://routes/user/Storage-Actor").get();
         return receiveBuilder()
                 .match(MainHttp.TestPackage.class, test -> {
                     log.info("Received test message");
                     int count = test.testsLists.size();
                     for (int i=0; i<count; i++) {
                         ActorRef testPasserActor = getContext().actorOf(TestPasserActor.props(), "TestPasser-Actor"+i);
-                        testPasserActor.tell(new MainHttp.TestForImpl(test, i), getSender());
+                        testPasserActor.tell(new MainHttp.TestForImpl(test, i), storageActor);
                     }
                 })
 

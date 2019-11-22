@@ -27,7 +27,7 @@ public class MainHttp extends AllDirectives {
 
         ActorSystem system = ActorSystem.create("routes");
         ActorRef routerActor = system.actorOf(RouterActor.props(system), "Router-Actor");
-        ActorRef storageActorRef = system.actorOf (StorageActor.props(), "Storage-Actor");
+
 
 
         //ActorRef testPasserActorRef = system.actorOf(TestPasserActor.props(), "TestPasser-Actor");
@@ -37,7 +37,7 @@ public class MainHttp extends AllDirectives {
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         MainHttp instance = new MainHttp();
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
-                instance.createRoute(routerActor, storageActorRef).flow(system, materializer);
+                instance.createRoute(routerActor).flow(system, materializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
                 routeFlow,
                 ConnectHttp.toHost("localhost", 8080),
@@ -51,7 +51,7 @@ public class MainHttp extends AllDirectives {
                 .thenAccept(unbound -> system.terminate());
     }
 
-    private Route createRoute(ActorRef routerActor, ActorRef storageActorRef) {
+    private Route createRoute(ActorRef routerActor) {
         return route(
                 /*path("get", () ->
                         route(
@@ -69,7 +69,8 @@ public class MainHttp extends AllDirectives {
                         route(
                                 post(() ->
                                         entity(Jackson.unmarshaller(TestPackage.class), test -> {
-                                            routerActor.tell(test, storageActorRef);
+                                            routerActor.tell(test, ActorRef.noSender());
+
                                             return complete("Test started!");
                                         })))));
     }
