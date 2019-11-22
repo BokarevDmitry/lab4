@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="279e44f8-1009-414d-9238-0986831e3740" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/bokarev/Classes.java" afterPath="$PROJECT_DIR$/src/main/java/bokarev/Classes.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bokarev/StorageActor.java" afterPath="$PROJECT_DIR$/src/main/java/bokarev/StorageActor.java" />
-    </list>
+    <list default="true" id="279e44f8-1009-414d-9238-0986831e3740" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
