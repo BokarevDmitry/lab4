@@ -6,15 +6,18 @@ import akka.actor.ActorSystem;
 import akka.http.javadsl.ConnectHttp;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.ServerBinding;
+import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.Route;
+import akka.pattern.Patterns;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 
 import java.io.IOException;
 import java.util.concurrent.CompletionStage;
+import java.util.concurrent.Future;
 //import scala.compat.java8.OptionConverters;
 
 
@@ -25,12 +28,13 @@ public class MainHttp extends AllDirectives {
     public static void main(String[] args) throws Exception, InterruptedException, IOException {
 
         ActorSystem system = ActorSystem.create("routes");
+        ActorRef routerActor = system.actorOf(RouterActor.props(system), "Router-Actor");
 
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         MainHttp instance = new MainHttp();
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
-                instance.createRoute(system).flow(system, materializer);
+                instance.createRoute(routerActor).flow(system, materializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
                 routeFlow,
                 ConnectHttp.toHost("localhost", 8080),
@@ -71,8 +75,8 @@ public class MainHttp extends AllDirectives {
     }
 
 
-    private Route createRoute(ActorSystem system) {
-        ActorRef routerActor = system.actorOf(RouterActor.props(system), "Router-Actor");
+    /*private Route createRoute(ActorRef routerActor) {
+
         return route(
                 path("r", () ->
                         get(() ->
@@ -80,31 +84,22 @@ public class MainHttp extends AllDirectives {
                             routerActor.tell(new RouterActor.TestResult(), ActorRef.noSender());
                             return complete("sent to router-actor");
                         })));
-    }
-   /* private Route createRoute(ActorSystem system) {
+    }*/
+    private Route createRoute(ActorSystem system) {
         return route(
-                path("semaphore", () ->
+                /*path("get", () ->
                         route(
                                 get( () -> {
                                     Future<Object> result = Patterns.ask(testPackageActor,
                                             SemaphoreActor.makeRequest(), 5000);
                                     return completeOKWithFuture(result, Jackson.marshaller());
-                                }))),
-                path("test", () ->
+                                }))),*/
+                path("post", () ->
                         route(
                                 post(() ->
                                         entity(Jackson.unmarshaller(TestPackageMsg.class), msg -> {
                                             testPackageActor.tell(msg, ActorRef.noSender());
                                             return complete("Test started!");
-                                        })))),
-                path("put", () ->
-                        get(() ->
-                                parameter("key", (key) ->
-                                        parameter("value", (value) ->
-                                        {
-                                            storeActor.tell(new StoreActor.StoreMessage(key, value), ActorRef.noSender());
-                                            return complete("value saved to store ! key=" + key + " value=" + value);
-                                        }))));
-    }*/
-
+                                        })))));
+    }
 }
