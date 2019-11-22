@@ -49,7 +49,7 @@ public class StorageActor extends AbstractActor {
                 .match(MainHttp.TestGetter.class, r -> {
                     log.info("Received Get Test Request message for package " + r.packageID);
                     //log.info("Test results: " + this.testResults.get(0).testResult);
-
+                    getSender().tell(this.testResults.get(11));
                 })
 
                 .build();
