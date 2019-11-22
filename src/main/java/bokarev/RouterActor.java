@@ -37,15 +37,15 @@ public class RouterActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return receiveBuilder()
-                .match(MainHttp.TestPackage.class, test -> {
+                .match(Classes.TestPackage.class, test -> {
                     log.info("NEW TEST PACKAGE");
                     int count = test.testsLists.size();
                     for (int i=0; i<count; i++) {
                         ActorRef testPasserActor = getContext().actorOf(TestPasserActor.props(), "TestPasser-Actor"+i);
-                        testPasserActor.tell(new MainHttp.TestForImpl(test, i), storageActor);
+                        testPasserActor.tell(new Classes.TestForImpl(test, i), storageActor);
                     }
                 })
-                .match(MainHttp.TestGetter.class, msg -> {
+                .match(Classes.TestGetter.class, msg -> {
                     storageActor.tell(msg, getSender());
                 })
                 .build();

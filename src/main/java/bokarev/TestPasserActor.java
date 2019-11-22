@@ -32,7 +32,7 @@ public class TestPasserActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return receiveBuilder()
-                .match(MainHttp.TestForImpl.class, test -> {
+                .match(Classes.TestForImpl.class, test -> {
                     Boolean res = Double.parseDouble(invoke(test)) == test.oneTest.expectedResult;
                     test.setResult(res);
                     log.info("TEST IS DONE, RESULT: " + res);
@@ -43,7 +43,7 @@ public class TestPasserActor extends AbstractActor {
                 .build();
     }
 
-    private String invoke(MainHttp.TestForImpl r) throws ScriptException, NoSuchMethodException {
+    private String invoke(Classes.TestForImpl r) throws ScriptException, NoSuchMethodException {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
         engine.eval(r.jsScript);
         Invocable invocable = (Invocable) engine;
