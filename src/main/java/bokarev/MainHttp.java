@@ -117,7 +117,6 @@ public class MainHttp extends AllDirectives {
         String testName;
         Double expectedResult;
         Object[] params;
-
         Boolean result;
 
         @JsonCreator
@@ -189,7 +188,7 @@ public class MainHttp extends AllDirectives {
     public static final class TestGetter {
         int packageID;
 
-        public TestGetter(int packageID) {
+        TestGetter(int packageID) {
             this.packageID = packageID;
         }
     }
