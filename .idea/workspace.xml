@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="279e44f8-1009-414d-9238-0986831e3740" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/bokarev/MainHttp.java" afterPath="$PROJECT_DIR$/src/main/java/bokarev/MainHttp.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bokarev/TestPasserActor.java" afterPath="$PROJECT_DIR$/src/main/java/bokarev/TestPasserActor.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,10 +24,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainHttp.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainHttp.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/bokarev/MainHttp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="892">
+            <state relative-caret-position="190">
               <caret line="118" column="24" lean-forward="false" selection-start-line="118" selection-start-column="24" selection-end-line="118" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -67,7 +67,7 @@
       <file leaf-file-name="RouterActor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/bokarev/RouterActor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
+            <state relative-caret-position="502">
               <caret line="48" column="56" lean-forward="false" selection-start-line="48" selection-start-column="56" selection-end-line="48" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -106,18 +106,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestPasserActor.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TestPasserActor.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/bokarev/TestPasserActor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2">
-              <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+            <state relative-caret-position="244">
+              <caret line="39" column="40" lean-forward="false" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#462#463#0" expanded="true" />
-                <element signature="e#506#507#0" expanded="true" />
-                <element signature="e#567#568#0" expanded="true" />
-                <element signature="e#611#612#0" expanded="true" />
-                <element signature="e#672#673#0" expanded="true" />
+                <element signature="e#406#407#0" expanded="true" />
+                <element signature="e#464#465#0" expanded="true" />
+                <element signature="e#508#509#0" expanded="true" />
+                <element signature="e#569#570#0" expanded="true" />
+                <element signature="e#613#614#0" expanded="true" />
+                <element signature="e#674#675#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -182,10 +183,10 @@
         <option value="$PROJECT_DIR$/src/main/java/bokarev/ReadingActor.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/bokarev/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/bokarev/TestPasserActor.java" />
         <option value="$PROJECT_DIR$/src/main/java/bokarev/RouterActor.java" />
         <option value="$PROJECT_DIR$/src/main/java/bokarev/StorageActor.java" />
         <option value="$PROJECT_DIR$/src/main/java/bokarev/MainHttp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/bokarev/TestPasserActor.java" />
       </list>
     </option>
   </component>
@@ -707,11 +708,12 @@
           <caret line="15" column="27" lean-forward="false" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#462#463#0" expanded="true" />
-            <element signature="e#506#507#0" expanded="true" />
-            <element signature="e#567#568#0" expanded="true" />
-            <element signature="e#611#612#0" expanded="true" />
-            <element signature="e#672#673#0" expanded="true" />
+            <element signature="e#406#407#0" expanded="true" />
+            <element signature="e#464#465#0" expanded="true" />
+            <element signature="e#508#509#0" expanded="true" />
+            <element signature="e#569#570#0" expanded="true" />
+            <element signature="e#613#614#0" expanded="true" />
+            <element signature="e#674#675#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -955,39 +957,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bokarev/TestPasserActor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#462#463#0" expanded="true" />
-            <element signature="e#506#507#0" expanded="true" />
-            <element signature="e#567#568#0" expanded="true" />
-            <element signature="e#611#612#0" expanded="true" />
-            <element signature="e#672#673#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bokarev/RouterActor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="48" column="56" lean-forward="false" selection-start-line="48" selection-start-column="56" selection-end-line="48" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#446#447#0" expanded="true" />
-            <element signature="e#530#531#0" expanded="true" />
-            <element signature="e#583#584#0" expanded="true" />
-            <element signature="e#645#646#0" expanded="true" />
-            <element signature="e#689#690#0" expanded="true" />
-            <element signature="e#746#747#0" expanded="true" />
-            <element signature="e#790#791#0" expanded="true" />
-            <element signature="e#847#848#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bokarev/ReadingActor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-404">
@@ -1028,7 +997,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bokarev/MainHttp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="892">
+        <state relative-caret-position="190">
           <caret line="118" column="24" lean-forward="false" selection-start-line="118" selection-start-column="24" selection-end-line="118" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1060,6 +1029,40 @@
             <element signature="e#6023#6024#0" expanded="true" />
             <element signature="e#6133#6134#0" expanded="true" />
             <element signature="e#6183#6184#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bokarev/RouterActor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="48" column="56" lean-forward="false" selection-start-line="48" selection-start-column="56" selection-end-line="48" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#446#447#0" expanded="true" />
+            <element signature="e#530#531#0" expanded="true" />
+            <element signature="e#583#584#0" expanded="true" />
+            <element signature="e#645#646#0" expanded="true" />
+            <element signature="e#689#690#0" expanded="true" />
+            <element signature="e#746#747#0" expanded="true" />
+            <element signature="e#790#791#0" expanded="true" />
+            <element signature="e#847#848#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bokarev/TestPasserActor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="39" column="40" lean-forward="false" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#406#407#0" expanded="true" />
+            <element signature="e#464#465#0" expanded="true" />
+            <element signature="e#508#509#0" expanded="true" />
+            <element signature="e#569#570#0" expanded="true" />
+            <element signature="e#613#614#0" expanded="true" />
+            <element signature="e#674#675#0" expanded="true" />
           </folding>
         </state>
       </provider>

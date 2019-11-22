@@ -5,6 +5,7 @@ import akka.actor.ActorRef;
 import akka.actor.Props;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
+;
 
 import javax.script.*;
 
@@ -32,10 +33,11 @@ public class TestPasserActor extends AbstractActor {
     public Receive createReceive() {
         return receiveBuilder()
                 .match(MainHttp.TestForImpl.class, test -> {
-                    Boolean res = (Double.parseDouble(invoke(test)) == test.oneTest.expectedResult);
+                    Boolean res = Double.parseDouble(invoke(test)) == test.oneTest.expectedResult;
                     test.setResult(res);
                     log.info("TEST IS DONE, RESULT: " + res);
                     getSender().tell(test, ActorRef.noSender());
+                    getSelf().tell(kill());
                 })
 
                 .build();
