@@ -1,6 +1,7 @@
 package bokarev;
 
 import akka.NotUsed;
+import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.http.javadsl.ConnectHttp;
 import akka.http.javadsl.Http;
@@ -68,11 +69,17 @@ public class MainHttp extends AllDirectives {
         storageActorRef.tell(new StorageActor.getTestsClass(11), ActorRef.noSender());
         */
     }
+
+
     private Route createRoute(ActorSystem system) {
+        ActorRef routerActor = system.actorOf(RouterActor.props(), "Router-Actor");
         return route(
-                path("hello", () ->
+                path("r", () ->
                         get(() ->
-                                complete("<h1>Say hello to akka-http</h1>"))));
+                        {
+                            routerActor.tell(new RouterActor.TestResult(), ActorRef.noSender());
+                            return complete("sent to router-actor");
+                        })));
     }
    /* private Route createRoute(ActorSystem system) {
         return route(
