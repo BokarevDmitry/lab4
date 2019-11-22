@@ -8,9 +8,7 @@ import akka.event.LoggingAdapter;
 
 import javax.script.*;
 
-
 public class TestPasserActor extends AbstractActor {
-
     private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), this);
 
     public TestPasserActor() {
@@ -18,22 +16,6 @@ public class TestPasserActor extends AbstractActor {
 
     public static Props props() {
         return Props.create(TestPasserActor.class);
-    }
-
-    public static class Test {
-        Integer packageID;
-        String jsScript, functionName, testName;
-        Double expectedResult;
-        Object[] params;
-
-        public Test(Integer packageID, String jsScript, String functionName, String testName, Double expectedResult, Object[] params) {
-            this.packageID = packageID;
-            this.jsScript = jsScript;
-            this.functionName = functionName;
-            this.testName = testName;
-            this.expectedResult = expectedResult;
-            this.params = params;
-        }
     }
 
     @Override

@@ -34,14 +34,14 @@ public class MainHttp extends AllDirectives {
         ActorSystem system = ActorSystem.create("routes");
         ActorRef routerActor = system.actorOf(RouterActor.props(system), "Router-Actor");
 
-        ActorRef testPasserActorRef = system.actorOf(TestPasserActor.props(), "TestPasser-Actor");
+        //ActorRef testPasserActorRef = system.actorOf(TestPasserActor.props(), "TestPasser-Actor");
 
 
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         MainHttp instance = new MainHttp();
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
-                instance.createRoute(testPasserActorRef).flow(system, materializer);
+                instance.createRoute(routerActor).flow(system, materializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
                 routeFlow,
                 ConnectHttp.toHost("localhost", 8080),
