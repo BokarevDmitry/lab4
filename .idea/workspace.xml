@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="279e44f8-1009-414d-9238-0986831e3740" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/bokarev/MainHttp.java" afterPath="$PROJECT_DIR$/src/main/java/bokarev/MainHttp.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bokarev/TestPasserActor.java" afterPath="$PROJECT_DIR$/src/main/java/bokarev/TestPasserActor.java" />
-    </list>
+    <list default="true" id="279e44f8-1009-414d-9238-0986831e3740" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -64,10 +61,10 @@
                 <element signature="imports" expanded="true" />
                 <element signature="e#404#405#0" expanded="true" />
                 <element signature="e#462#463#0" expanded="true" />
-                <element signature="e#510#511#0" expanded="true" />
-                <element signature="e#571#572#0" expanded="true" />
-                <element signature="e#615#616#0" expanded="true" />
-                <element signature="e#676#677#0" expanded="true" />
+                <element signature="e#506#507#0" expanded="true" />
+                <element signature="e#567#568#0" expanded="true" />
+                <element signature="e#611#612#0" expanded="true" />
+                <element signature="e#672#673#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -435,7 +432,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1104" y="24" width="816" height="1056" extended-state="4" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -445,7 +441,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27578947" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27578947" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -652,10 +648,10 @@
             <element signature="imports" expanded="true" />
             <element signature="e#404#405#0" expanded="true" />
             <element signature="e#462#463#0" expanded="true" />
-            <element signature="e#510#511#0" expanded="true" />
-            <element signature="e#571#572#0" expanded="true" />
-            <element signature="e#615#616#0" expanded="true" />
-            <element signature="e#676#677#0" expanded="true" />
+            <element signature="e#506#507#0" expanded="true" />
+            <element signature="e#567#568#0" expanded="true" />
+            <element signature="e#611#612#0" expanded="true" />
+            <element signature="e#672#673#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -947,10 +943,10 @@
             <element signature="imports" expanded="true" />
             <element signature="e#404#405#0" expanded="true" />
             <element signature="e#462#463#0" expanded="true" />
-            <element signature="e#510#511#0" expanded="true" />
-            <element signature="e#571#572#0" expanded="true" />
-            <element signature="e#615#616#0" expanded="true" />
-            <element signature="e#676#677#0" expanded="true" />
+            <element signature="e#506#507#0" expanded="true" />
+            <element signature="e#567#568#0" expanded="true" />
+            <element signature="e#611#612#0" expanded="true" />
+            <element signature="e#672#673#0" expanded="true" />
           </folding>
         </state>
       </provider>
