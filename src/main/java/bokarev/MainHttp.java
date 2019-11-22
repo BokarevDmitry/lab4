@@ -48,6 +48,7 @@ public class MainHttp extends AllDirectives {
                         route(
                                 get(() ->
                                     parameter("packageId", packageId -> {
+                                        System.out.println(packageId);
                                         Future<Object> future = Patterns.ask(routerActor, new Classes.TestGetter(Integer.getInteger(packageId)), 5000);
                                         return completeOKWithFuture(future, Jackson.marshaller());
                                     })
