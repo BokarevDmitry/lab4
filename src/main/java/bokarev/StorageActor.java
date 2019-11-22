@@ -5,17 +5,19 @@ import akka.actor.Props;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
 
-import java.util.ArrayList;
+import java.util.*;
 
 
 public class StorageActor extends AbstractActor {
 
     private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), this);
 
-    private ArrayList<TestResult> testResults;
+    private Map<int, MainHttp.TestPackage> testResults;
 
     public StorageActor() {
-        this.testResults = new ArrayList<>();
+        this.testResults = new Map<int, MainHttp.TestPackage>() {
+        };
+
     }
 
     public static Props props() {
