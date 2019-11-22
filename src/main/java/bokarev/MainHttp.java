@@ -103,7 +103,11 @@ public class MainHttp extends AllDirectives {
                                         })))));
     }
 
-    private static class Test {
+    private static class TestsList {
+        final String 
+    }
+
+    private static class Tests {
         final Integer packageID;
         final String jsScript, functionName, testName;
         final Double expectedResult;
