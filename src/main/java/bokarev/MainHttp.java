@@ -27,7 +27,9 @@ public class MainHttp extends AllDirectives {
 
         ActorSystem system = ActorSystem.create("routes");
         ActorRef routerActor = system.actorOf(RouterActor.props(system), "Router-Actor");
+        ActorRef storageActorRef = system.actorOf (StorageActor.props(), "Storage-Actor");
 
+        
         //ActorRef testPasserActorRef = system.actorOf(TestPasserActor.props(), "TestPasser-Actor");
 
 
@@ -67,7 +69,7 @@ public class MainHttp extends AllDirectives {
                         route(
                                 post(() ->
                                         entity(Jackson.unmarshaller(TestPackage.class), test -> {
-                                            routerActor.tell(test, ActorRef.noSender());
+                                            routerActor.tell(test, );
                                             return complete("Test started!");
                                         })))));
     }
@@ -102,6 +104,25 @@ public class MainHttp extends AllDirectives {
             this.testName = testName;
             this.expectedResult = expectedResult;
             this.params = params;
+        }
+    }
+
+    public static class TestForImpl {
+        final Integer packageId;
+        final String jsScript, functionName;
+
+        final String testName;
+        final Double expectedResult;
+        final Object[] params;
+
+        testForImpl(TestPackage test, int indexOfTest) {
+            this.packageId = test.packageId;
+            this.jsScript = test.jsScript;
+            this.functionName = test.functionName;
+
+            this.testName = test.testsLists.get(indexOfTest).testName;
+            this.expectedResult = test.testsLists.get(indexOfTest).expectedResult;
+            this.params = test.testsLists.get(indexOfTest).params;
         }
     }
 }
