@@ -14,6 +14,8 @@ import akka.http.javadsl.server.Route;
 import akka.pattern.Patterns;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.util.concurrent.CompletionStage;
@@ -108,7 +110,10 @@ public class MainHttp extends AllDirectives {
         final Double expectedResult;
         final Object[] params;
 
-        
+        @JsonCreator
+        TestsList(@JsonProperty("testName") String testName,
+                  @JsonProperty("expectedResult") Double expectedResult,
+                  @JsonProperty(""))
     }
 
     private static class Tests {
