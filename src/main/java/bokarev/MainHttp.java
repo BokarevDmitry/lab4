@@ -49,7 +49,7 @@ public class MainHttp extends AllDirectives {
                                 get(() ->
                                     parameter("packageId", packageId -> {
                                         System.out.println(packageId);
-                                        Future<Object> future = Patterns.ask(routerActor, new Classes.TestGetter(Integer.getInteger(packageId)), 5000);
+                                        Future<Object> future = Patterns.ask(routerActor, new Classes.TestGetter(Integer.parseInt(packageId)), 5000);
                                         return completeOKWithFuture(future, Jackson.marshaller());
                                     })
                                 ))),
