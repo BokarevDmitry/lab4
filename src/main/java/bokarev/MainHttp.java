@@ -18,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.CompletionStage;
 import java.util.concurrent.Future;
 //import scala.compat.java8.OptionConverters;
@@ -121,11 +122,20 @@ public class MainHttp extends AllDirectives {
     }
 
     private static class Tests {
-        final Integer packageID;
+        final Integer packageId;
         final String jsScript, functionName;
+        final List<TestsList> testsLists;
 
         @JsonCreator
-        Tests(@JsonProperty("packageID"))
+        Tests(@JsonProperty("packageId") Integer packageId,
+              @JsonProperty("jsScript") String jsScript,
+              @JsonProperty("functionName") String functionName,
+              @JsonProperty("")) {
+            this.packageId = packageId;
+            this.jsScript = jsScript;
+            this.functionName = functionName;
+
+        }
 
 
         public Tests(Integer packageID, String jsScript, String functionName, String testName, Double expectedResult, Object[] params) {
