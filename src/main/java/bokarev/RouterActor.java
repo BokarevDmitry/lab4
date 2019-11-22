@@ -14,16 +14,15 @@ public class RouterActor extends AbstractActor {
 
     private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), this);
 
+    private ActorRef storageActor;
 
     public RouterActor(ActorSystem system) {
-        system.actorOf (StorageActor.props(), "Storage-Actor");
+       storageActor = system.actorOf (StorageActor.props(), "Storage-Actor");
     }
-
 
     public static Props props(ActorSystem system) {
         return Props.create(RouterActor.class, system);
     }
-
 
     @Override
     public void preStart() {
@@ -37,8 +36,6 @@ public class RouterActor extends AbstractActor {
 
     @Override
     public Receive createReceive() {
-        ActorRef storageActor = getContext().getSystem().actorFor("akka://routes/user/Storage-Actor");
-
         return receiveBuilder()
                 .match(MainHttp.TestPackage.class, test -> {
                     log.info("NEW TEST PACKAGE");
@@ -48,7 +45,6 @@ public class RouterActor extends AbstractActor {
                         testPasserActor.tell(new MainHttp.TestForImpl(test, i), storageActor);
                     }
                 })
-
                 .build();
     }
 }

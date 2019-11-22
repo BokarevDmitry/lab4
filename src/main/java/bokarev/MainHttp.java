@@ -63,6 +63,7 @@ public class MainHttp extends AllDirectives {
                 path("get", () ->
                         route(
                                 get(() -> {
+                                    
                                     return complete("Good");
                                 }))),
                 path("post", () ->
@@ -70,7 +71,6 @@ public class MainHttp extends AllDirectives {
                                 post(() ->
                                         entity(Jackson.unmarshaller(TestPackage.class), test -> {
                                             routerActor.tell(test, ActorRef.noSender());
-
                                             return complete("Test started!");
                                         })))));
     }
