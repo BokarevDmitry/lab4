@@ -102,4 +102,23 @@ public class MainHttp extends AllDirectives {
                                             return complete("Test started!");
                                         })))));
     }
+
+    private static class Test {
+        final Integer packageID;
+        final String jsScript, functionName, testName;
+        final Double expectedResult;
+        final Object[] params;
+
+        @JSON
+
+
+        public Test(Integer packageID, String jsScript, String functionName, String testName, Double expectedResult, Object[] params) {
+            this.packageID = packageID;
+            this.jsScript = jsScript;
+            this.functionName = functionName;
+            this.testName = testName;
+            this.expectedResult = expectedResult;
+            this.params = params;
+        }
+    }
 }
