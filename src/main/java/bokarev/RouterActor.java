@@ -44,11 +44,12 @@ public class RouterActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return receiveBuilder()
-                .match(MainHttp.Test.class, test -> {
+                .match(MainHttp.TestPackage.class, test -> {
                     log.info("Received test message");
                     int count = test.testsLists.size();
                     for (int i=0; i<count; i++) {
-                        ActorRef testpasserActor =
+                        ActorRef testPasserActor = getContext().actorOf(TestPasserActor.props(), "TestPasser-Actor");
+                        testPasserActor.tell(test.testsLists.get(i), );
                     }
                 })
 

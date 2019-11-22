@@ -11,7 +11,6 @@ import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.Route;
-import akka.pattern.Patterns;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -19,10 +18,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.CompletionStage;
-import java.util.concurrent.Future;
-//import scala.compat.java8.OptionConverters;
+
 
 
 public class MainHttp extends AllDirectives {
@@ -50,45 +47,8 @@ public class MainHttp extends AllDirectives {
         binding
                 .thenCompose(ServerBinding::unbind)
                 .thenAccept(unbound -> system.terminate());
-
-
-
-
-
-
-        /*ActorRef storageActorRef = system.actorOf (StorageActor.props(), "Storage-Actor");
-
-
-        //storageActorRef.tell(new RouterActor.TestResult(1), ActorRef.noSender());
-        //storageActorRef.tell(new RouterActor.TestResult(7), ActorRef.noSender());
-        //storageActorRef.tell(new RouterActor.TestResult(2), ActorRef.noSender());
-
-        //storageActorRef.tell(new RouterActor.getTestsClass(11), ActorRef.noSender());
-
-
-        Object[] params = {2,1};
-        ActorRef testPasserActorRef = system.actorOf(TestPasserActor.props(), "TestPasser-Actor");
-        testPasserActorRef.tell(new TestPasserActor.Test(
-                11, "var divideFn = function(a,b) {return a/b}",
-                "divideFn", "test1", 2.0, params), storageActorRef);
-
-
-        Thread.sleep(1000);
-        storageActorRef.tell(new StorageActor.getTestsClass(11), ActorRef.noSender());
-        */
     }
 
-
-    /*private Route createRoute(ActorRef routerActor) {
-
-        return route(
-                path("r", () ->
-                        get(() ->
-                        {
-                            routerActor.tell(new RouterActor.TestResult(), ActorRef.noSender());
-                            return complete("sent to router-actor");
-                        })));
-    }*/
     private Route createRoute(ActorRef routerActor) {
         return route(
                 /*path("get", () ->
@@ -106,41 +66,42 @@ public class MainHttp extends AllDirectives {
                 path("post", () ->
                         route(
                                 post(() ->
-                                        entity(Jackson.unmarshaller(Test.class), test -> {
+                                        entity(Jackson.unmarshaller(TestPackage.class), test -> {
                                             routerActor.tell(test, ActorRef.noSender());
                                             return complete("Test started!");
                                         })))));
     }
 
-    public static class TestsList {
+    public static class TestPackage {
+        final Integer packageId;
+        final String jsScript, functionName;
+        final ArrayList<OneTest> testsLists;
+
+        @JsonCreator
+        TestPackage(
+              @JsonProperty("packageId") Integer packageId,
+              @JsonProperty("jsScript") String jsScript,
+              @JsonProperty("functionName") String functionName,
+              @JsonProperty("tests") ArrayList<OneTest> testsLists) {
+            this.packageId = packageId;
+            this.jsScript = jsScript;
+            this.functionName = functionName;
+            this.testsLists = testsLists;
+        }
+    }
+
+    static class OneTest {
         final String testName;
         final Double expectedResult;
         final Object[] params;
 
         @JsonCreator
-        TestsList(@JsonProperty("testName") String testName,
-                  @JsonProperty("expectedResult") Double expectedResult,
-                  @JsonProperty("params") Object[] params) {
+        OneTest(@JsonProperty("testName") String testName,
+                @JsonProperty("expectedResult") Double expectedResult,
+                @JsonProperty("params") Object[] params) {
             this.testName = testName;
             this.expectedResult = expectedResult;
             this.params = params;
-        }
-    }
-
-    public static class Test {
-        final Integer packageId;
-        final String jsScript, functionName;
-        final ArrayList<TestsList> testsLists;
-
-        @JsonCreator
-        Test(@JsonProperty("packageId") Integer packageId,
-              @JsonProperty("jsScript") String jsScript,
-              @JsonProperty("functionName") String functionName,
-              @JsonProperty("tests") ArrayList<TestsList> testsLists) {
-            this.packageId = packageId;
-            this.jsScript = jsScript;
-            this.functionName = functionName;
-            this.testsLists = testsLists;
         }
     }
 }

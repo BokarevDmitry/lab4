@@ -31,7 +31,7 @@ public class TestPasserActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return receiveBuilder()
-                .match(MainHttp.Test.class, r -> {
+                .match(MainHttp.OneTest.class, r -> {
                     log.info("Received test message");
                     Boolean res = (Double.parseDouble(invoke(r)) == r.testsLists.get(0).expectedResult);
                     log.info("RESULT: " + res);
@@ -41,7 +41,7 @@ public class TestPasserActor extends AbstractActor {
                 .build();
     }
 
-    private String invoke(MainHttp.Test r) throws ScriptException, NoSuchMethodException {
+    private String invoke(MainHttp.OneTest r) throws ScriptException, NoSuchMethodException {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
         engine.eval(r.jsScript);
         Invocable invocable = (Invocable) engine;
