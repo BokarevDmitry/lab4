@@ -129,7 +129,8 @@ public class MainHttp extends AllDirectives {
             this.oneTest = new OneTest(
                     test.testsLists.get(indexOfTest).testName,
                     test.testsLists.get(indexOfTest).expectedResult,
-                    test.testsLists.get(indexOfTest).params);
+                    test.testsLists.get(indexOfTest).params,
+                    null);
         }
 
         void setResult (Boolean result){
