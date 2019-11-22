@@ -49,7 +49,7 @@ public class StorageActor extends AbstractActor {
                     log.info("Received test result message");
 
                     if (this.testResults.containsKey(test.packageId)) {
-                        this.testResults.put()
+                        this.testResults.get(test.packageId).testsLists.add(test.oneTest);
                     } else {
                         MainHttp.TestPackage testPackage = new MainHttp.TestPackage(test);
                         this.testResults.put(test.packageId, testPackage);
