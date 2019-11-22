@@ -22,19 +22,7 @@ public class StorageActor extends AbstractActor {
         return Props.create(StorageActor.class);
     }
 
-    static final class TestResult {
-        String testName;
-        Double expectedResult;
-        Object[] params;
-        Boolean testResult;
 
-        TestResult(String testName, Double expectedResult, Object[] params, Boolean testResult) {
-            this.testName = testName;
-            this.expectedResult = expectedResult;
-            this.params = params;
-            this.testResult = testResult;
-        }
-    }
 
     public static final class getTestsClass {
         int packageID;
@@ -62,10 +50,10 @@ public class StorageActor extends AbstractActor {
 
                     if (this.testResults.get(test.packageId)) {
 
+                    } else {
+                        MainHttp.TestPackage testPackage = new MainHttp.TestPackage(test);
+                        this.testResults.put(test.packageId, testPackage);
                     }
-
-
-                    this.testResults.put(test.packageId, test)
                 })
 
                 .match(getTestsClass.class, r -> {

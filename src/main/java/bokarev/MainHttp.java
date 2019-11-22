@@ -91,12 +91,22 @@ public class MainHttp extends AllDirectives {
             this.functionName = functionName;
             this.testsLists = testsLists;
         }
+
+        TestPackage(TestForImpl test) {
+            this.packageId = test.packageId;
+            this.jsScript = test.jsScript;
+            this.functionName = test.functionName;
+            this.testsLists = new ArrayList<>();
+            this.testsLists.add(test.oneTest);
+        }
     }
 
     static class OneTest {
-        final String testName;
-        final Double expectedResult;
-        final Object[] params;
+        String testName;
+        Double expectedResult;
+        Object[] params;
+
+        Boolean result;
 
         @JsonCreator
         OneTest(@JsonProperty("testName") String testName,
@@ -105,41 +115,28 @@ public class MainHttp extends AllDirectives {
             this.testName = testName;
             this.expectedResult = expectedResult;
             this.params = params;
+            this.result = null;
         }
     }
 
     public static class TestForImpl {
         final Integer packageId;
         final String jsScript, functionName;
-
-        final String testName;
-        final Double expectedResult;
-        final Object[] params;
-
-        final Boolean result;
+        OneTest oneTest;
 
         TestForImpl(TestPackage test, int indexOfTest) {
             this.packageId = test.packageId;
             this.jsScript = test.jsScript;
             this.functionName = test.functionName;
 
-            this.testName = test.testsLists.get(indexOfTest).testName;
-            this.expectedResult = test.testsLists.get(indexOfTest).expectedResult;
-            this.params = test.testsLists.get(indexOfTest).params;
-
-            this.result = null;
+            this.oneTest = new OneTest(
+                    test.testsLists.get(indexOfTest).testName,
+                    test.testsLists.get(indexOfTest).expectedResult,
+                    test.testsLists.get(indexOfTest).params);
         }
 
-        TestForImpl(TestForImpl test, Boolean result) {
-            this.packageId = test.packageId;
-            this.jsScript = test.jsScript;
-            this.functionName = test.functionName;
-
-            this.testName = test.testName;
-            this.expectedResult = test.expectedResult;
-            this.params = test.params;
-
-            this.result = result;
+        void setResult (Boolean result){
+            this.oneTest.result = result;
         }
     }
 }

@@ -32,9 +32,10 @@ public class TestPasserActor extends AbstractActor {
     public Receive createReceive() {
         return receiveBuilder()
                 .match(MainHttp.TestForImpl.class, test -> {
-                    Boolean res = (Double.parseDouble(invoke(test)) == test.expectedResult);
+                    Boolean res = (Double.parseDouble(invoke(test)) == test.oneTest.expectedResult);
+                    test.setResult(res);
                     log.info("TEST IS DONE, RESULT: " + res);
-                    getSender().tell(new MainHttp.TestForImpl(test, res), ActorRef.noSender());
+                    getSender().tell(test, ActorRef.noSender());
                 })
 
                 .build();
@@ -44,7 +45,7 @@ public class TestPasserActor extends AbstractActor {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
         engine.eval(r.jsScript);
         Invocable invocable = (Invocable) engine;
-        return invocable.invokeFunction(r.functionName, r.params).toString();
+        return invocable.invokeFunction(r.functionName, r.oneTest.params).toString();
     }
 }
 
