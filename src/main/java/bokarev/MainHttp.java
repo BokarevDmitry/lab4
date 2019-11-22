@@ -37,7 +37,7 @@ public class MainHttp extends AllDirectives {
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         MainHttp instance = new MainHttp();
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
-                instance.createRoute(routerActor).flow(system, materializer);
+                instance.createRoute(routerActor, storageActorRef).flow(system, materializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
                 routeFlow,
                 ConnectHttp.toHost("localhost", 8080),
@@ -51,7 +51,7 @@ public class MainHttp extends AllDirectives {
                 .thenAccept(unbound -> system.terminate());
     }
 
-    private Route createRoute(ActorRef routerActor) {
+    private Route createRoute(ActorRef routerActor, ActorRef storageActorRef) {
         return route(
                 /*path("get", () ->
                         route(
@@ -69,7 +69,7 @@ public class MainHttp extends AllDirectives {
                         route(
                                 post(() ->
                                         entity(Jackson.unmarshaller(TestPackage.class), test -> {
-                                            routerActor.tell(test, );
+                                            routerActor.tell(test, storageActorRef);
                                             return complete("Test started!");
                                         })))));
     }
@@ -115,7 +115,7 @@ public class MainHttp extends AllDirectives {
         final Double expectedResult;
         final Object[] params;
 
-        testForImpl(TestPackage test, int indexOfTest) {
+        TestForImpl(TestPackage test, int indexOfTest) {
             this.packageId = test.packageId;
             this.jsScript = test.jsScript;
             this.functionName = test.functionName;
