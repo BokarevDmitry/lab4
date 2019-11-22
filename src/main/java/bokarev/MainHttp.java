@@ -104,7 +104,11 @@ public class MainHttp extends AllDirectives {
     }
 
     private static class TestsList {
-        final String 
+        final String testName;
+        final Double expectedResult;
+        final Object[] params;
+
+        
     }
 
     private static class Tests {
@@ -116,7 +120,7 @@ public class MainHttp extends AllDirectives {
         @JSON
 
 
-        public Test(Integer packageID, String jsScript, String functionName, String testName, Double expectedResult, Object[] params) {
+        public Tests(Integer packageID, String jsScript, String functionName, String testName, Double expectedResult, Object[] params) {
             this.packageID = packageID;
             this.jsScript = jsScript;
             this.functionName = functionName;
