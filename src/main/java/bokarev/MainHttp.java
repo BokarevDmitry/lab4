@@ -56,13 +56,6 @@ public class MainHttp extends AllDirectives {
 
     private Route createRoute(ActorRef routerActor) {
         return route(
-                /*path("get", () ->
-                        route(
-                                get( () -> {
-                                    Future<Object> result = Patterns.ask(testPackageActor,
-                                            SemaphoreActor.makeRequest(), 5000);
-                                    return completeOKWithFuture(result, Jackson.marshaller());
-                                }))),*/
                 path("get", () ->
                         route(
                                 get(() -> {
@@ -114,7 +107,8 @@ public class MainHttp extends AllDirectives {
         @JsonCreator
         OneTest(@JsonProperty("testName") String testName,
                 @JsonProperty("expectedResult") Double expectedResult,
-                @JsonProperty("params") Object[] params) {
+                @JsonProperty("params") Object[] params,
+                @JsonProperty("result") Boolean result) {
             this.testName = testName;
             this.expectedResult = expectedResult;
             this.params = params;
