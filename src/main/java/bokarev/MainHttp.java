@@ -72,7 +72,7 @@ public class MainHttp extends AllDirectives {
 
 
     private Route createRoute(ActorSystem system) {
-        ActorRef routerActor = system.actorOf(RouterActor.props(), "Router-Actor");
+        ActorRef routerActor = system.actorOf(RouterActor.props(system), "Router-Actor");
         return route(
                 path("r", () ->
                         get(() ->
