@@ -3,7 +3,7 @@ package bokarev;
 import akka.NotUsed;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
-import akka.compat.Future;
+//import akka.compat.Future;
 import akka.http.javadsl.ConnectHttp;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.ServerBinding;
@@ -17,6 +17,7 @@ import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import scala.concurrent.Future;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -65,7 +66,7 @@ public class MainHttp extends AllDirectives {
                 path("get", () ->
                         route(
                                 get(() -> {
-                                    Future<Object> future = Patterns.ask()
+                                    Future<Object> future = Patterns.ask(routerActor, new MainHttp.TestGetter(11), 5000);
                                     return complete("Good");
                                 }))),
                 path("post", () ->
@@ -139,6 +140,14 @@ public class MainHttp extends AllDirectives {
 
         void setResult (Boolean result){
             this.oneTest.result = result;
+        }
+    }
+
+    public static final class TestGetter {
+        int packageID;
+
+        public TestGetter(int packageID) {
+            this.packageID = packageID;
         }
     }
 }

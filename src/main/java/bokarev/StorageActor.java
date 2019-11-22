@@ -22,16 +22,6 @@ public class StorageActor extends AbstractActor {
         return Props.create(StorageActor.class);
     }
 
-
-
-    public static final class getTestsClass {
-        int packageID;
-
-        public getTestsClass(int packageID) {
-            this.packageID = packageID;
-        }
-    }
-
     @Override
     public void preStart() {
         log.info("Starting StorageActor {}", this);

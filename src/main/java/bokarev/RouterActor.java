@@ -14,7 +14,7 @@ public class RouterActor extends AbstractActor {
 
     private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), this);
 
-    private ActorRef storageActor;
+    public ActorRef storageActor;
 
     public RouterActor(ActorSystem system) {
        storageActor = system.actorOf (StorageActor.props(), "Storage-Actor");
