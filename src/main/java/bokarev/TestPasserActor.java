@@ -21,7 +21,7 @@ public class TestPasserActor extends AbstractActor {
 
     @Override
     public void preStart() {
-        log.info("Starting TestPasserActor {}", this);
+        log.info("Starting TestPasserActor {}", this.getSelf());
     }
 
     @Override
