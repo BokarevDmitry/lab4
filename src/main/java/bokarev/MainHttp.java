@@ -125,7 +125,7 @@ public class MainHttp extends AllDirectives {
         final String jsScript, functionName;
 
         @JsonCreator
-        Tests(@JsonProperty(""))
+        Tests(@JsonProperty("packageID"))
 
 
         public Tests(Integer packageID, String jsScript, String functionName, String testName, Double expectedResult, Object[] params) {
