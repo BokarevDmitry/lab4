@@ -101,6 +101,11 @@ public class MainHttp extends AllDirectives {
                                             SemaphoreActor.makeRequest(), 5000);
                                     return completeOKWithFuture(result, Jackson.marshaller());
                                 }))),*/
+                path("get", () ->
+                        route(
+                                get(() -> {
+                                    return complete("Good");
+                                }))),
                 path("post", () ->
                         route(
                                 post(() ->
