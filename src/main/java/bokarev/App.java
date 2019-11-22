@@ -19,14 +19,14 @@ import java.io.IOException;
 import java.util.concurrent.CompletionStage;
 
 
-public class MainHttp extends AllDirectives {
+public class App extends AllDirectives {
     public static void main(String[] args) throws Exception, InterruptedException, IOException {
         ActorSystem system = ActorSystem.create("routes");
         ActorRef routerActor = system.actorOf(RouterActor.props(system), "Router-Actor");
 
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
-        MainHttp instance = new MainHttp();
+        App instance = new App();
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
                 instance.createRoute(routerActor).flow(system, materializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
