@@ -26,7 +26,7 @@ public class TestPasserActor extends AbstractActor {
 
     @Override
     public void postStop() {
-        log.info("Stopping TestPasserActor {}", this);
+        log.info("Stopping TestPasserActor {}", this.getSelf());
     }
 
     @Override
