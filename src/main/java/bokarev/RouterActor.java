@@ -44,7 +44,7 @@ public class RouterActor extends AbstractActor {
     @Override
     public Receive createReceive() {
        // ActorRef storageActor = getContext().findChild("akka://routes/user/Storage-Actor").get();
-        System.out.println(getContext().getSystem().actorSelection("akka://routes/user/Storage-Actor"));
+        System.out.println(getContext().getSystem().actorFor("akka://routes/user/Storage-Actor"));
         return receiveBuilder()
                 .match(MainHttp.TestPackage.class, test -> {
                     log.info("Received test message");
