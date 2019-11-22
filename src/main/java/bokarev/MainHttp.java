@@ -1,25 +1,20 @@
 package bokarev;
 
 import akka.NotUsed;
-import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.http.javadsl.ConnectHttp;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.ServerBinding;
-import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.Route;
-import akka.pattern.Patterns;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 
 import java.io.IOException;
 import java.util.concurrent.CompletionStage;
-import java.util.concurrent.Future;
 //import scala.compat.java8.OptionConverters;
-import scala.compat.Platform.*;
 
 
 //import static bokarev.StoreActor.Msg.GREET;
@@ -28,7 +23,7 @@ import scala.compat.Platform.*;
 public class MainHttp extends AllDirectives {
     public static void main(String[] args) throws Exception, InterruptedException, IOException {
 
-        ActorSystem system = ActorSystem.create("Actor-System");
+        ActorSystem system = ActorSystem.create("routes");
 
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
@@ -76,7 +71,7 @@ public class MainHttp extends AllDirectives {
         */
     }
     private Route createRoute(ActorSystem system) {
-        return concat(
+        return route(
                 path("hello", () ->
                         get(() ->
                                 complete("<h1>Say hello to akka-http</h1>"))));
