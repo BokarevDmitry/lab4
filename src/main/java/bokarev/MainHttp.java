@@ -113,16 +113,19 @@ public class MainHttp extends AllDirectives {
         @JsonCreator
         TestsList(@JsonProperty("testName") String testName,
                   @JsonProperty("expectedResult") Double expectedResult,
-                  @JsonProperty(""))
+                  @JsonProperty("params") Object[] params) {
+            this.testName = testName;
+            this.expectedResult = expectedResult;
+            this.params = params;
+        }
     }
 
     private static class Tests {
         final Integer packageID;
-        final String jsScript, functionName, testName;
-        final Double expectedResult;
-        final Object[] params;
+        final String jsScript, functionName;
 
-        @JSON
+        @JsonCreator
+        Tests(@JsonProperty(""))
 
 
         public Tests(Integer packageID, String jsScript, String functionName, String testName, Double expectedResult, Object[] params) {
