@@ -116,6 +116,8 @@ public class MainHttp extends AllDirectives {
         final Double expectedResult;
         final Object[] params;
 
+        final Boolean result;
+
         TestForImpl(TestPackage test, int indexOfTest) {
             this.packageId = test.packageId;
             this.jsScript = test.jsScript;
@@ -124,6 +126,20 @@ public class MainHttp extends AllDirectives {
             this.testName = test.testsLists.get(indexOfTest).testName;
             this.expectedResult = test.testsLists.get(indexOfTest).expectedResult;
             this.params = test.testsLists.get(indexOfTest).params;
+
+            this.result = null;
+        }
+
+        TestForImpl(TestForImpl test, Boolean result) {
+            this.packageId = test.packageId;
+            this.jsScript = test.jsScript;
+            this.functionName = test.functionName;
+
+            this.testName = test.testName;
+            this.expectedResult = test.expectedResult;
+            this.params = test.params;
+
+            this.result = result;
         }
     }
 }

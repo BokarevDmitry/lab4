@@ -31,10 +31,10 @@ public class TestPasserActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return receiveBuilder()
-                .match(MainHttp.TestForImpl.class, r -> {
-                    Boolean res = (Double.parseDouble(invoke(r)) == r.expectedResult);
+                .match(MainHttp.TestForImpl.class, test -> {
+                    Boolean res = (Double.parseDouble(invoke(test)) == test.expectedResult);
                     log.info("TEST IS DONE, RESULT: " + res);
-                    getSender().tell(new StorageActor.TestResult(r.testName, r.expectedResult, r.params, res), ActorRef.noSender());
+                    getSender().tell(new MainHttp.TestForImpl(test, res), ActorRef.noSender());
                 })
 
                 .build();

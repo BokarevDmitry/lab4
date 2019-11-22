@@ -12,12 +12,10 @@ public class StorageActor extends AbstractActor {
 
     private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), this);
 
-    private Map<int, MainHttp.TestPackage> testResults;
+    private Map<Integer, MainHttp.TestPackage> testResults;
 
     public StorageActor() {
-        this.testResults = new Map<int, MainHttp.TestPackage>() {
-        };
-
+        this.testResults = new HashMap<Integer, MainHttp.TestPackage>();
     }
 
     public static Props props() {
@@ -59,9 +57,15 @@ public class StorageActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return receiveBuilder()
-                .match(TestResult.class, r -> {
+                .match(MainHttp.TestForImpl.class, test -> {
                     log.info("Received test result message");
-                    this.testResults.add(r);
+
+                    if (this.testResults.get(test.packageId)) {
+
+                    }
+
+
+                    this.testResults.put(test.packageId, test)
                 })
 
                 .match(getTestsClass.class, r -> {
