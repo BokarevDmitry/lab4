@@ -33,7 +33,7 @@ public class RouterActor extends AbstractActor {
     public Receive createReceive() {
         return receiveBuilder()
                 .match(Classes.TestPackage.class, test -> {
-                    log.info("NEW TEST PACKAGE");
+                    log.info("REQUEST: route new test package");
                     int count = test.testsLists.size();
                     for (int i=0; i<count; i++) {
                         ActorRef testPasserActor = getContext().actorOf(TestPasserActor.props(), "TestPasser-Actor-"+i);

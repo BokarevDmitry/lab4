@@ -5,12 +5,9 @@ import akka.actor.ActorRef;
 import akka.actor.Props;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
-
 import java.util.*;
 
-
 public class StorageActor extends AbstractActor {
-
     private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), this);
 
     private Map<Integer, Classes.TestPackage> testResults;
@@ -37,7 +34,7 @@ public class StorageActor extends AbstractActor {
     public Receive createReceive() {
         return receiveBuilder()
                 .match(Classes.TestForImpl.class, test -> {
-                    log.info("Received test result message");
+                    log.info("REQUEST: store test results of package - " + test.packageId);
                     if (this.testResults.containsKey(test.packageId)) {
                         this.testResults.get(test.packageId).testsLists.add(test.oneTest);
                     } else {
@@ -46,11 +43,11 @@ public class StorageActor extends AbstractActor {
                     }
                 })
                 .match(Classes.TestGetter.class, r -> {
-                    log.info("Received Get Test Request message for package " + r.packageId);
+                    log.info("REQUEST: tests for package - " + r.packageId);
                     if (this.testResults.containsKey(r.packageId)) {
                         getSender().tell(this.testResults.get(r.packageId), getSelf());
                     } else {
-                        getSender().tell("No tests with this packageId", ActorRef.noSender());
+                        getSender().tell("RESPONSE: no tests with this packageId", ActorRef.noSender());
                     }
                 })
 

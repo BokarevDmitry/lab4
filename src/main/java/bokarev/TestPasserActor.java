@@ -50,4 +50,3 @@ public class TestPasserActor extends AbstractActor {
         return invocable.invokeFunction(r.functionName, r.oneTest.params).toString();
     }
 }
-
