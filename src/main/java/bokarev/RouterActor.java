@@ -7,14 +7,9 @@ import akka.actor.Props;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
 
-import java.util.ArrayList;
-
-
 public class RouterActor extends AbstractActor {
-
     private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), this);
-
-    public ActorRef storageActor;
+    private ActorRef storageActor;
 
     public RouterActor(ActorSystem system) {
        storageActor = system.actorOf (StorageActor.props(), "Storage-Actor");
@@ -26,12 +21,12 @@ public class RouterActor extends AbstractActor {
 
     @Override
     public void preStart() {
-        log.info("Starting RouterActor {}", this);
+        log.info("Starting RouterActor {}", this.getSelf());
     }
 
     @Override
     public void postStop() {
-        log.info("Stopping RouterActor {}", this);
+        log.info("Stopping RouterActor {}", this.getSelf());
     }
 
     @Override
@@ -41,13 +36,11 @@ public class RouterActor extends AbstractActor {
                     log.info("NEW TEST PACKAGE");
                     int count = test.testsLists.size();
                     for (int i=0; i<count; i++) {
-                        ActorRef testPasserActor = getContext().actorOf(TestPasserActor.props(), "TestPasser-Actor"+i);
+                        ActorRef testPasserActor = getContext().actorOf(TestPasserActor.props(), "TestPasser-Actor-"+i);
                         testPasserActor.tell(new Classes.TestForImpl(test, i), storageActor);
                     }
                 })
-                .match(Classes.TestGetter.class, msg -> {
-                    storageActor.tell(msg, getSender());
-                })
+                .match(Classes.TestGetter.class, msg -> storageActor.tell(msg, getSender()))
                 .build();
     }
 }
