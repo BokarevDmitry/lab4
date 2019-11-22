@@ -19,8 +19,6 @@ public class RouterActor extends AbstractActor {
         ActorRef storageActorRef = system.actorOf (StorageActor.props(), "Storage-Actor");
     }
 
-    /*public RouterActor() {
-    }*/
 
     public static Props props(ActorSystem system) {
         return Props.create(RouterActor.class, system);
