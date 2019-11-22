@@ -67,7 +67,7 @@ public class MainHttp extends AllDirectives {
                         route(
                                 get(() -> {
                                     Future<Object> future = Patterns.ask(routerActor, new MainHttp.TestGetter(11), 5000);
-                                    return complete("Good");
+                                    return completeOKWithFuture(future, Jackson.marshaller());
                                 }))),
                 path("post", () ->
                         route(

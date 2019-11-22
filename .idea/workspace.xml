@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="279e44f8-1009-414d-9238-0986831e3740" name="Default" comment="" />
+    <list default="true" id="279e44f8-1009-414d-9238-0986831e3740" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/bokarev/MainHttp.java" afterPath="$PROJECT_DIR$/src/main/java/bokarev/MainHttp.java" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,14 +27,14 @@
       <file leaf-file-name="MainHttp.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/bokarev/MainHttp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="69" column="36" lean-forward="true" selection-start-line="69" selection-start-column="36" selection-end-line="69" selection-end-column="36" />
+            <state relative-caret-position="360">
+              <caret line="68" column="110" lean-forward="false" selection-start-line="68" selection-start-column="110" selection-end-line="68" selection-end-column="110" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5295#5296#0" expanded="true" />
-                <element signature="e#5347#5348#0" expanded="true" />
-                <element signature="e#5464#5465#0" expanded="true" />
-                <element signature="e#5514#5515#0" expanded="true" />
+                <element signature="e#5329#5330#0" expanded="true" />
+                <element signature="e#5381#5382#0" expanded="true" />
+                <element signature="e#5498#5499#0" expanded="true" />
+                <element signature="e#5548#5549#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -159,16 +161,16 @@
         <option value="$PROJECT_DIR$/src/main/java/bokarev/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/bokarev/TestPasserActor.java" />
         <option value="$PROJECT_DIR$/src/main/java/bokarev/RouterActor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/bokarev/MainHttp.java" />
         <option value="$PROJECT_DIR$/src/main/java/bokarev/StorageActor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/bokarev/MainHttp.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="964" />
-    <option name="y" value="24" />
-    <option name="width" value="954" />
-    <option name="height" value="1056" />
+    <option name="x" value="999" />
+    <option name="y" value="32" />
+    <option name="width" value="858" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -489,10 +491,10 @@
           <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5295#5296#0" expanded="true" />
-            <element signature="e#5347#5348#0" expanded="true" />
-            <element signature="e#5464#5465#0" expanded="true" />
-            <element signature="e#5514#5515#0" expanded="true" />
+            <element signature="e#5329#5330#0" expanded="true" />
+            <element signature="e#5381#5382#0" expanded="true" />
+            <element signature="e#5498#5499#0" expanded="true" />
+            <element signature="e#5548#5549#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -981,14 +983,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bokarev/MainHttp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="69" column="36" lean-forward="true" selection-start-line="69" selection-start-column="36" selection-end-line="69" selection-end-column="36" />
+        <state relative-caret-position="360">
+          <caret line="68" column="110" lean-forward="false" selection-start-line="68" selection-start-column="110" selection-end-line="68" selection-end-column="110" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5295#5296#0" expanded="true" />
-            <element signature="e#5347#5348#0" expanded="true" />
-            <element signature="e#5464#5465#0" expanded="true" />
-            <element signature="e#5514#5515#0" expanded="true" />
+            <element signature="e#5329#5330#0" expanded="true" />
+            <element signature="e#5381#5382#0" expanded="true" />
+            <element signature="e#5498#5499#0" expanded="true" />
+            <element signature="e#5548#5549#0" expanded="true" />
           </folding>
         </state>
       </provider>
