@@ -18,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletionStage;
 import java.util.concurrent.Future;
@@ -33,11 +34,14 @@ public class MainHttp extends AllDirectives {
         ActorSystem system = ActorSystem.create("routes");
         ActorRef routerActor = system.actorOf(RouterActor.props(system), "Router-Actor");
 
+        ActorRef testPasserActorRef = system.actorOf(TestPasserActor.props(), "TestPasser-Actor");
+
+
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         MainHttp instance = new MainHttp();
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
-                instance.createRoute(routerActor).flow(system, materializer);
+                instance.createRoute(testPasserActorRef).flow(system, materializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
                 routeFlow,
                 ConnectHttp.toHost("localhost", 8080),
@@ -106,7 +110,7 @@ public class MainHttp extends AllDirectives {
                                         })))));
     }
 
-    private static class TestsList {
+    public static class TestsList {
         final String testName;
         final Double expectedResult;
         final Object[] params;
@@ -124,13 +128,13 @@ public class MainHttp extends AllDirectives {
     public static class Test {
         final Integer packageId;
         final String jsScript, functionName;
-        final List<TestsList> testsLists;
+        final ArrayList<TestsList> testsLists;
 
         @JsonCreator
         Test(@JsonProperty("packageId") Integer packageId,
               @JsonProperty("jsScript") String jsScript,
               @JsonProperty("functionName") String functionName,
-              @JsonProperty("tests") List<TestsList> testsLists) {
+              @JsonProperty("tests") ArrayList<TestsList> testsLists) {
             this.packageId = packageId;
             this.jsScript = jsScript;
             this.functionName = functionName;

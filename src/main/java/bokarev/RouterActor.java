@@ -17,6 +17,7 @@ public class RouterActor extends AbstractActor {
 
     public RouterActor(ActorSystem system) {
         ActorRef storageActorRef = system.actorOf (StorageActor.props(), "Storage-Actor");
+        //ActorRef testPasserAcrorRef = system.actorOf(TestPasserActor.props(), "TestPasser-Actor");
     }
 
 
@@ -43,8 +44,9 @@ public class RouterActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return receiveBuilder()
-                .match(TestResult.class, r -> {
-                    log.info("Received test result message");
+                .match(MainHttp.Test.class, test -> {
+                    log.info("Received test message");
+
                 })
 
                 .build();
