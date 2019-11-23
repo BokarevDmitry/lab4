@@ -44,14 +44,14 @@ public class App extends AllDirectives {
                         route(
                                 get(() ->
                                     parameter("packageId", packageId -> {
-                                        Future<Object> future = Patterns.ask(routerActor, new Classes.TestGetter(Integer.parseInt(packageId)), 5000);
+                                        Future<Object> future = Patterns.ask(routerActor, new TestGetter(Integer.parseInt(packageId)), 5000);
                                         return completeOKWithFuture(future, Jackson.marshaller());
                                     })
                                 ))),
                 path("post", () ->
                         route(
                                 post(() ->
-                                        entity(Jackson.unmarshaller(Classes.TestPackage.class), test -> {
+                                        entity(Jackson.unmarshaller(TestPackage.class), test -> {
                                             routerActor.tell(test, ActorRef.noSender());
                                             return complete("Test started!");
                                         })))));

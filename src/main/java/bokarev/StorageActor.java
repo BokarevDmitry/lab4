@@ -10,7 +10,7 @@ import java.util.*;
 public class StorageActor extends AbstractActor {
     private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), this);
 
-    private Map<Integer, Classes.TestPackage> testResults;
+    private Map<Integer, TestPackage> testResults;
 
     public StorageActor() {
         this.testResults = new HashMap<>();
@@ -33,19 +33,19 @@ public class StorageActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return receiveBuilder()
-                .match(Classes.TestForImpl.class, test -> {
-                    log.info("REQUEST: store test results of package - " + test.packageId);
-                    if (this.testResults.containsKey(test.packageId)) {
-                        this.testResults.get(test.packageId).testsLists.add(test.oneTest);
+                .match(TestForImpl.class, test -> {
+                    log.info("REQUEST: store test results of package - " + test.getPackageId());
+                    if (this.testResults.containsKey(test.getPackageId())) {
+                        this.testResults.get(test.getPackageId()).testsLists.add(test.getOneTest());
                     } else {
-                        Classes.TestPackage testPackage = new Classes.TestPackage(test);
-                        this.testResults.put(test.packageId, testPackage);
+                        TestPackage testPackage = new TestPackage(test);
+                        this.testResults.put(test.getPackageId(), testPackage);
                     }
                 })
-                .match(Classes.TestGetter.class, r -> {
-                    log.info("REQUEST: tests for package - " + r.packageId);
+                .match(TestGetter.class, r -> {
+                    log.info("REQUEST: tests for package - " + r.getPackageId());
                     if (this.testResults.containsKey(r.packageId)) {
-                        getSender().tell(this.testResults.get(r.packageId), getSelf());
+                        getSender().tell(this.testResults.get(r.getPackageId()), getSelf());
                     } else {
                         getSender().tell("RESPONSE: no tests with this packageId", ActorRef.noSender());
                     }

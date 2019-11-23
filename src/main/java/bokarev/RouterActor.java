@@ -7,8 +7,10 @@ import akka.actor.Props;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
 
+
 public class RouterActor extends AbstractActor {
     private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), this);
+
     private ActorRef storageActor;
 
     public RouterActor(ActorSystem system) {
@@ -32,15 +34,15 @@ public class RouterActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return receiveBuilder()
-                .match(Classes.TestPackage.class, test -> {
+                .match(TestPackage.class, test -> {
                     log.info("REQUEST: route new test package");
                     int count = test.testsLists.size();
                     for (int i=0; i<count; i++) {
                         ActorRef testPasserActor = getContext().actorOf(TestPasserActor.props(), "TestPasser-Actor-"+i);
-                        testPasserActor.tell(new Classes.TestForImpl(test, i), storageActor);
+                        testPasserActor.tell(new TestForImpl(test, i), storageActor);
                     }
                 })
-                .match(Classes.TestGetter.class, msg -> storageActor.tell(msg, getSender()))
+                .match(TestGetter.class, msg -> storageActor.tell(msg, getSender()))
                 .build();
     }
 }
